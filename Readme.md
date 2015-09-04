@@ -49,3 +49,10 @@ Remotely change scenes from the NodeCG dashboard, with option to use a fancy tra
 ### ssbm-top-info
 
 Misc. info display to show at the top of the game screen. Customizable widths and spacing. 
+
+## Credits
+
+* [NodeCG](http://nodecg.com/)
+* [OBS Remote JS](https://github.com/nodecg/obs-remote-js)
+* [Node Challonge](https://github.com/Tidwell/node-challonge)
+* Transition animation taken from [toth-overlay](https://github.com/TipoftheHats/toth-overlay)
