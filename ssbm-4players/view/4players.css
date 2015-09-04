@@ -1,0 +1,108 @@
+@font-face {
+	font-family: 'OswaldRegular';
+    src: url('img/Oswald-Regular.eot');
+    src: url('img/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('img/Oswald-Bold.eot');
+    src: url('img/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*body {
+	overflow: hidden;
+}*/
+
+#container {
+	width: 1290px;
+	height: 1060px;
+}
+
+#teams {
+	position: relative;
+	top: 0%;
+	margin: 5px 10px 0 10px;
+	display: flex;
+	justify-content: space-between;
+
+	font-family: 'OswaldRegular', helvetica, arial;
+	font-size: 20px;
+	/*color: white;*/
+}
+
+.team {
+	width: 100px;
+	height: 45px;
+	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.teamname {
+	margin-left: 5px;
+	margin-right: 5px;
+	flex-basis: 65px;
+}
+
+.teamscore {
+	margin: 5px;
+	margin-left: 10px;
+}
+
+#team2name {
+	text-align: right;
+}
+
+#space {
+	width: 1px;
+	height: 960px;
+}
+
+#players {
+	/*position: absolute;
+	bottom: 0;*/
+	margin: 0 5px 5px 5px;
+	position: relative;
+}
+
+.player {
+	width: 295px;
+	height: 45px;
+	/*background: #11a105;
+	border-radius: 5px;*/
+	background-image: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	margin-left: 6px;
+	margin-right: 6px;
+	float: left;
+	position: relative;
+
+	display: flex;
+	align-items: center;
+
+	font-family: 'OswaldRegular', helvetica, arial;
+	font-size: 20px;
+}
+
+#player1 {
+	margin-left: 35px;
+}
+
+/*#player4 {
+	margin-right: 35px;
+}*/
+
+.flag {
+	margin: 5px;
+}
+
+.tag {
+	margin-left: 5px;
+	margin-right: 5px;
+}

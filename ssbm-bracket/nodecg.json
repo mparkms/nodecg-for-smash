@@ -1,0 +1,14 @@
+{
+	"name": "ssbm-bracket",
+	"version": "0.0.1",
+	"nodecgDependency": ">= 0.6.0",
+	"description": "Top 8 bracket display that can be pulled from Challonge or manually inputted",
+	"homepage": "www.mikeparkms.com",
+	"authors": [
+		"Mike Park (@kaabistar)"
+	],
+	"license": "MIT",
+	"extension": {
+		"path": "node-challonge-ext.js"
+	}
+}

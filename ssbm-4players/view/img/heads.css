@@ -1,0 +1,155 @@
+.head-doc {
+	background: url('heads.png') no-repeat -36px -1px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-mario {
+	background: url('heads.png') no-repeat -177px -1px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-luigi {
+	background: url('heads.png') no-repeat -329px -1px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-bowser {
+	background: url('heads.png') no-repeat -454px -1px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-peach {
+	background: url('heads.png') no-repeat -56px -38px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-yoshi {
+	background: url('heads.png') no-repeat -218px -38px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-dk {
+	background: url('heads.png') no-repeat -407px -38px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-cf {
+	background: url('heads.png') no-repeat -1px -74px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-ganondorf {
+	background: url('heads.png') no-repeat -188px -74px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-falco {
+	background: url('heads.png') no-repeat -354px -74px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-fox {
+	background: url('heads.png') no-repeat -490px -74px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-ness {
+	background: url('heads.png') no-repeat -14px -110px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-ic {
+	background: url('heads.png') no-repeat -142px -109px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-samus {
+	background: url('heads.png') no-repeat -445px -111px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-zelda {
+	background: url('heads.png') no-repeat -62px -146px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-sheik {
+	background: url('heads.png') no-repeat -224px -146px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-link {
+	background: url('heads.png') no-repeat -386px -146px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-yl {
+	background: url('heads.png') no-repeat -22px -182px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-pichu {
+	background: url('heads.png') no-repeat -182px -184px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-pikachu {
+	background: url('heads.png') no-repeat -310px -182px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-jigglypuff {
+	background: url('heads.png') no-repeat -441px -182px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-mewtwo {
+	background: url('heads.png') no-repeat -25px -217px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-gw {
+	background: url('heads.png') no-repeat -140px -220px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-marth {
+	background: url('heads.png') no-repeat -273px -217px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-roy {
+	background: url('heads.png') no-repeat -434px -217px;
+	width: 24px;
+	height: 24px;
+}
+
+.head-none {
+	background: url('heads.png') no-repeat 0px 0px;
+	width: 24px;
+	height: 24px;
+}

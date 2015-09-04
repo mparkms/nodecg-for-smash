@@ -1,0 +1,36 @@
+@font-face {
+	font-family: 'OswaldRegular';
+    src: url('img/fonts/Oswald-Regular.eot');
+    src: url('img/fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('img/fonts/Oswald-Bold.eot');
+    src: url('img/fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	overflow: hidden;
+}
+
+#container {
+	position: absolute;
+	top: 0%;
+	width: 500px;
+	height: 40px;
+	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	font-family: 'OswaldRegular', helvetica, arial;
+	font-size: 20px;
+}
+
+#text {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}

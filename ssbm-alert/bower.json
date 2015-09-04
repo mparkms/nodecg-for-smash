@@ -1,0 +1,7 @@
+{
+    "name": "ssbm-lower-third",
+    "dependencies": {
+        "jquery": "^2.1.0",
+        "ionsound": "^1.3.0"
+    }
+}

@@ -1,0 +1,123 @@
+@font-face {
+	font-family: 'OswaldRegular';
+    src: url('img/fonts/Oswald-Regular.eot');
+    src: url('img/fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('img/fonts/Oswald-Bold.eot');
+    src: url('img/fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#rostercontainer {
+	width: 550px;
+	height: 330px;
+	font-family: 'OswaldRegular', helvetica, arial;
+}
+
+#rosterheadercontainer {
+	width: 550px;
+	height: 30px;
+}
+
+.rosterheader {
+	box-sizing: border-box;
+	width: 275px;
+	height: 30px;
+	float: left;
+}
+
+#rosterheaderleft {
+	background-color: #4D4DE3;
+
+	position: relative;
+	left: -275px;
+}
+
+#rosterheaderright {
+	background-color: #E44C4B;
+
+	position: relative;
+	left: 275px;
+}
+
+.crewname {
+	width: 235px;
+	height: 30px;
+	float: left;
+	overflow: hidden;
+	line-height: 30px;
+}
+
+.crewstock {
+	width: 30px;
+	height: 30px;
+	float: left;
+	overflow: hidden;
+	line-height: 30px;
+	font-size: 0.9em;
+}
+
+#crewnameleft {
+	text-align: right;
+}
+
+#crewnameright {
+	text-align: left;
+}
+
+#crewstockleft {
+	text-align: right;
+	padding-right: 10px;
+}
+
+#crewstockright {
+	text-align: left;
+	padding-left: 10px;
+}
+
+#rosterbodycontainer {
+	width: 550px;
+	height: 300px;
+}
+
+.roster {
+	width: 275px;
+	height: 300px;
+	float: left;
+	font-size: 1.05em;
+}
+
+#rosterleft {
+	text-align: right;
+}
+
+#rosterright {
+	text-align: left;
+}
+
+.rosterentry {
+	box-sizing: border-box;
+	width: 275px;
+	height: 30px;
+	background-color: #eee;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ddd;
+}
+
+#rosterleft .rosterentry {
+	padding-right: 10px;
+	position: relative;
+	left: -275px;
+}
+
+#rosterright .rosterentry {
+	padding-left: 10px;
+	position: relative;
+	left: 275px;
+}

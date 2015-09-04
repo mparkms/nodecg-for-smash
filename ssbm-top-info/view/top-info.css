@@ -1,0 +1,47 @@
+@font-face {
+	font-family: 'OswaldRegular';
+    src: url('img/Oswald-Regular.eot');
+    src: url('img/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('img/Oswald-Bold.eot');
+    src: url('img/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	overflow: hidden;
+}
+
+#container {
+	width: 1290px;
+	height: 50px;
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+	padding-top: 3px;
+}
+
+.panel {
+	/*border-radius: 5px;*/
+	/*background: #11a105;*/
+	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	width: 430px;
+	height: 45px;
+	position: relative;
+
+	text-align: center;
+	font-family: 'OswaldRegular', helvetica, arial;
+	font-size: 20px;
+	line-height: 45px;
+}
+
+#spacing {
+	width: 100px;
+	height: 45px;
+}

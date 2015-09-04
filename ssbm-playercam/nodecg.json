@@ -1,0 +1,11 @@
+{
+	"name": "ssbm-playercam",
+	"version": "0.0.1",
+	"nodecgDependency": ">= 0.6.0",
+	"description": "Label for playercam on main game view",
+	"homepage": "www.mikeparkms.com",
+	"authors": [
+		"Mike Park (@kaabistar)"
+	],
+	"license": "MIT"
+}

@@ -1,0 +1,6 @@
+{
+    "name": "ssbm-4players",
+    "dependencies": {
+        "jquery": "^2.1.0"
+    }
+}

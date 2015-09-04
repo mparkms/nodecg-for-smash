@@ -1,0 +1,124 @@
+@font-face {
+	font-family: 'OswaldRegular';
+    src: url('img/fonts/Oswald-Regular.eot');
+    src: url('img/fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OswaldBold';
+    src: url('img/fonts/Oswald-Bold.eot');
+    src: url('img/fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#info {
+	width: 1920px;
+	height: 150px;
+	font-family: 'OswaldRegular', helvetica, arial;
+	color: #fff;
+}
+
+#bracket-name {
+	height: 100px;
+	font-size: 4em;
+}
+
+#bracket-link {
+	height: 50px;
+	font-size: 2em;
+}
+
+#bracket {
+	width: 1920px;
+	height: 700px;
+}
+
+.set {
+	width: 220px;
+	height: 60px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.player {
+	width: 220px;
+	height: 30px;
+	background-color: #ccc;
+	border: 2px solid #888;
+	box-sizing: border-box;
+	font-family: 'OswaldRegular', helvetica, arial;
+	text-align: center;
+}
+
+.name {
+	float: left;
+	width: 186px;
+	height: 28px;
+}
+
+.score {
+	float: left;
+	width: 30px;
+	height: 28px;
+	border-left: 2px solid #777;
+	box-sizing: border-box;
+	font-family: 'OswaldRegular', helvetica, arial;
+	text-align: center;
+}
+
+.column {
+	float: left;
+}
+
+.set-column {
+	width: 220px;
+	height: 700px;
+}
+
+.spacing-column {
+	width: 20px;
+	height: 700px;
+}
+
+.spacing-half {
+	float: left;
+	width: 10px;
+}
+
+.winners, .losers {
+	height: 350px;
+}
+
+#l1m1, #r1m1 {
+	top: 77px;
+}
+
+#l1m2, #r1m2 {
+	top: 154px;
+}
+
+#l2m1 {
+	top: 62px;
+}
+
+#l2m2 {
+	top: 139px;
+}
+
+#l3m1 {
+	top: 130px;
+}
+
+#l4m1 {
+	top: 115px;
+}
+
+#r2m1 {
+	top: 145px;
+}
+
+#r3m1, #r3m2 {
+	top: 320px;
+}

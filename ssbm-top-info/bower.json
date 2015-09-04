@@ -1,0 +1,6 @@
+{
+    "name": "ssbm-top-info",
+    "dependencies": {
+        "jquery": "^2.1.0"
+    }
+}
