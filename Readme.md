@@ -47,6 +47,10 @@ Remotely change scenes from the NodeCG dashboard, with option to use a fancy tra
 
 Misc. info display to show at the top of the game screen. You can also send a pop-up message (e.g. stats, bracket updates, "what's next") to display in the same area for a short period of time.
 
+### ssbm-bg-helper
+
+Helper bundle to adjust the backgrounds for ssbm-4playres, ssbm-playercam, ssbm-players, and ssbm-top-info. Choose to use an image or a solid color with adjustable corner radius.
+
 ## Images
 
 The `/images` directory contains images you can use on your stream, and the templates if you want to make your own. In-Game Overlay.png is a default overlay that works with the scene collection provided in the `/obs` directory. The template for this overlay is given in the `/images/template` directory. 
