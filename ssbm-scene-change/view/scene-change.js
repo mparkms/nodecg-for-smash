@@ -20,10 +20,10 @@ $(function () {
 		$('#shuttercontainer').html('');
 		for (var i = 1; i <= numSlices; i++) {
 			$('#shuttercontainer').append('<div id="shutter' + i + '" class="shutter"><img src="img/logo_slices/logo_slice' + i + '.png"></div>');
-			//var bgGradient = shadeColor("#f37424", -15 * (numSlices - i + 1));
+			var bgGradient = shadeColor("#d52134", -15 * (numSlices - i + 1));
 			$('#shutter' + i).css({
 			  'left': (1 / numSlices) * (i - 1) * 100 + "%",
-			  'background-color': shadeColor("#fdfdfe", -15 * i), //light to dark
+			  'background-color': shadeColor("#d52134", -15 * i), //light to dark
 			  //'background-image': '-webkit-linear-gradient(top, rgba(255,205,40,0) 10%, ' + bgGradient +' 99%)'
 			});
 		}
@@ -63,7 +63,7 @@ $(function () {
 		B = B + Math.floor((shade / 255) * B);
 
 		var newColorInt = (R << 16) + (G << 8) + (B);
-		var newColorStr = "#" + newColorInt.toString(16);
+		var newColorStr = newColorInt.toString(16);
 		    
 		return newColorStr;
 	}

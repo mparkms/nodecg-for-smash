@@ -16,7 +16,7 @@
 #info {
 	width: 1920px;
 	height: 150px;
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	color: #fff;
 }
 
@@ -45,11 +45,21 @@
 .player {
 	width: 220px;
 	height: 30px;
-	background-color: #ccc;
-	border: 2px solid #888;
+	background-color: #d52134;
+	border: 2px solid #8b0000;
 	box-sizing: border-box;
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	text-align: center;
+}
+
+.player-top {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.player-bottom {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .name {
@@ -62,9 +72,9 @@
 	float: left;
 	width: 30px;
 	height: 28px;
-	border-left: 2px solid #777;
+	border-left: 2px solid #8b0000;
 	box-sizing: border-box;
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	text-align: center;
 }
 

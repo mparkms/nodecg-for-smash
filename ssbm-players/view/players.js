@@ -45,4 +45,20 @@ $(function () {
 		}
 		
 	}
+
+	var bgInfo = nodecg.Replicant('bgInfo', 'ssbm-bg-helper');
+
+	bgInfo.on('change', function(oldValue, newValue) {
+		if(oldValue) {
+			if(oldValue.image && newValue.image) return;
+			else if (newValue.image) {
+				$('.player').css('background', 'none');
+				$('.player').css('background-image', 'url("img/players.png")');
+			} else {
+				$('.player').css('background-image', 'none');
+				$('.player').css('background', '#' + newValue.color);
+				$('.player').css('border-radius', newValue.corner + 'px')
+			}
+		}
+	});
 });

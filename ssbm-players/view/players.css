@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-family: 'OswaldRegular';
     src: url('img/Oswald-Regular.eot');
     src: url('img/Oswald-Regular.ttf') format('truetype');
@@ -11,7 +11,7 @@
     src: url('img/Oswald-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 /*body {
 	overflow: hidden;
@@ -24,8 +24,9 @@
 
 .player {
 	/*background: #11a105;*/
-	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	background-image: url('img/players.png');
 	width: 550px;
 	height: 45px;
 	float: left;
@@ -33,8 +34,9 @@
 	align-items: center;
 	position: relative;
 
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	font-size: 20px;
+	color: white;
 }
 
 #player1 {

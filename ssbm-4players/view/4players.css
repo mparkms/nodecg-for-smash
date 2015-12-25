@@ -20,6 +20,7 @@
 #container {
 	width: 1290px;
 	height: 1060px;
+	color: #fff;
 }
 
 #teams {
@@ -29,7 +30,7 @@
 	display: flex;
 	justify-content: space-between;
 
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	font-size: 20px;
 	/*color: white;*/
 }
@@ -37,8 +38,9 @@
 .team {
 	width: 100px;
 	height: 45px;
-	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	background-image: url('img/bg/blue team.png');
 	display: flex;
 	align-items: center;
 	position: relative;
@@ -76,8 +78,9 @@
 	height: 45px;
 	/*background: #11a105;
 	border-radius: 5px;*/
-	background-image: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	/*background-image: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	background-image: url('img/bg/blue tag.png');
 	margin-left: 6px;
 	margin-right: 6px;
 	float: left;
@@ -86,7 +89,7 @@
 	display: flex;
 	align-items: center;
 
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	font-size: 20px;
 }
 

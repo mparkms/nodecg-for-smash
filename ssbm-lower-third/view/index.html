@@ -5,6 +5,20 @@
 	<script src="lower-third.js"></script>
 </head>
 <body>
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Oxygen::latin' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+			'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})(); 
+	</script>
 	<div id="container">
 		<div id="logocontainer">
 			<div id="logo"><span class="helper"></span><img src="img/logo.png"/></div>
@@ -12,7 +26,7 @@
 		<div id="lowerthirdcontainer">
 			<div id="lowerthird">
 				<div id="lowerthirdtoptext"></div>
-				<div id="lowerthirddivider"></div>
+				<!--<div id="lowerthirddivider"></div>-->
 				<div id="lowerthirdbottomtext"></div>
 			</div>
 		</div>

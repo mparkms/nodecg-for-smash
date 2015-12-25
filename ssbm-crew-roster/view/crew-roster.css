@@ -16,7 +16,7 @@
 #rostercontainer {
 	width: 550px;
 	height: 330px;
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 }
 
 #rosterheadercontainer {
@@ -32,14 +32,18 @@
 }
 
 #rosterheaderleft {
-	background-color: #4D4DE3;
+	/*background-color: #4D4DE3;*/
+	background: -moz-linear-gradient(top, rgba(0,94,163,1) 0%, rgba(0,127,220,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,94,163,1)), color-stop(100%,rgba(0,127,220,1))); /* Chrome,Safari4+ */
 
 	position: relative;
 	left: -275px;
 }
 
 #rosterheaderright {
-	background-color: #E44C4B;
+	/*background-color: #E44C4B;*/
+	background: -moz-linear-gradient(top, rgba(164,27,0,1) 0%, rgba(220,37,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(164,27,0,1)), color-stop(100%,rgba(220,37,0,1))); /* Chrome,Safari4+ */
 
 	position: relative;
 	left: 275px;

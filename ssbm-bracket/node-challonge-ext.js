@@ -2,7 +2,7 @@ module.exports = function(nodecg) {
 	var challonge = require('./node-challonge');
 
 	var client = challonge.createClient({
-		apiKey: 'ENTER API KEY HERE'
+		apiKey: 'YlETxrtIVBw6w1WQNJNFpqsrMIqwFEIoFy5472Uy'
 	});
 
 	var matches = {};
@@ -39,15 +39,15 @@ module.exports = function(nodecg) {
 		var indexRoundMatch = ['r1m1', 'r1m2', 'r2m1', 'l1m1', 'l1m2', 'l2m1', 'l2m2', 'l3m1', 'l4m1', 'r3m1', 'r3m2'];
 
 		// top8matches: 0-1 = r1, 2 = r2, 3-4 = l1, 5-6 = l2, 7 = l3, 8 = l4, 9 = r3m1, 10 = r3m2 (bracket reset)
-		for (var i = 2; i <= 4; i++) {
+		for (var i = 2; i <= 4; i++) { // winners semis and finals
 			top8matches[4-i] = matches[playerNum - i];
 		}
-		if (matchNum % 2 == 0) {
-			for (var i = 1; i <= 7; i++) {
+		if (matchNum % 2 == 0) { // even if no reset, odd if reset
+			for (var i = 1; i <= 7; i++) { // losers + grand finals
 				top8matches[10-i] = matches[matchNum - i];
 			}
 		} else {
-			for (var i = 1; i <= 8; i++) {
+			for (var i = 1; i <= 8; i++) { // losers + 2 grand finals sets
 				top8matches[11-i] = matches[matchNum - i];
 			}
 		}

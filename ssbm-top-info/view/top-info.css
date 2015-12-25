@@ -20,28 +20,53 @@ body {
 #container {
 	width: 1290px;
 	height: 50px;
-	display: inline-flex;
-	justify-content: center;
+	/*display: inline-flex;*/
+	/*justify-content: center;*/
 	position: relative;
-	padding-top: 3px;
+	/*padding-top: 3px;*/
+	color: #FFF;
 }
 
 .panel {
 	/*border-radius: 5px;*/
 	/*background: #11a105;*/
-	background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
+	background-image: url('img/top info.png');
 	width: 430px;
 	height: 45px;
-	position: relative;
+	position: absolute;
 
 	text-align: center;
-	font-family: 'OswaldRegular', helvetica, arial;
+	font-family: 'Oxygen', helvetica, arial;
 	font-size: 20px;
 	line-height: 45px;
 }
 
-#spacing {
-	width: 100px;
+#panel1 {
+	margin-right: 50px;
+	left: 165px;
+}
+
+#panel2 {
+	margin-left: 50px;
+	left: 645px;
+}
+
+#message {
+	width: 0;
 	height: 45px;
+	background: #007fdc;
+	border-radius: 5px;
+	position: absolute;
+	left: 645px;
+
+	text-align: center;
+	font-family: 'Oxygen', helvetica, arial;
+	font-size: 20px;
+	line-height: 45px;
+}
+
+#message-text {
+	display: none;
 }
