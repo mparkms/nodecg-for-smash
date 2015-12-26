@@ -9,9 +9,10 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 3. Clone/download this repo, put the contents in the /bundles directory in the NodeCG directory
 4. If you want to use the scene change bundle, set up [OBS Remote](http://www.obsremote.com/) with no password and install [OBS Remote JS](https://github.com/nodecg/obs-remote-js). If you want to use the pull from Challonge feature in the bracket bundle, get a [Challonge API key](http://api.challonge.com/v1) and replace ENTER API KEY HERE in /ssbm-bracket/node-challonge-ext.js with it.
 5. Start NodeCG
-6. Set up your stream overlay in OBS using [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) and the links to the bundle views, available in the info button for each bundle in the dashboard.
-  * Alternatively, just import the default scene collection given in the `/obs` directory. MAke sure CLR Browser is installed. If you want, you can also use the overlay given in the `/images` directory or make your own using the template in `/images/templates`.
-7. Use.
+6. Go to localhost:9090 in your web browser to open the dashboard.
+7. Set up your stream overlay in OBS using [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) and the links to the bundle views, available in the info button for each bundle in the dashboard.
+  * Alternatively, just import the default scene collection given in the `/obs` directory. Make sure CLR Browser is installed. If you want, you can also use the overlay given in the `/images` directory or make your own using the template in `/images/templates`.
+8. Use.
 
 ## Overview of included bundles
 

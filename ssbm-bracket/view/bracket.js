@@ -13,23 +13,23 @@ $(function() {
 			$('#' + data.bracket[i].roundMatch + 'p2 > .score').text(data.bracket[i].score[1]);
 			if(data.bracket[i].winner != 0) {
 				$('#' + data.bracket[i].roundMatch + 'p' + loser[data.bracket[i].winner] + ' > .name').css({
-					'color': '#bbb',
-					'background-color': '#8b0000',
+					'color': '#333',
+					'background-color': '#005ea3',
 					'text-decoration': 'line-through'
 				});
 				$('#' + data.bracket[i].roundMatch + 'p' + data.bracket[i].winner + ' > .name').css({
-					'color': '#fff',
+					'color': '#000',
 					'background-color': 'transparent',
 					'text-decoration': 'none'
 				});
 			} else {
 				$('#' + data.bracket[i].roundMatch + 'p1 > .name').css({
-					'color': '#fff',
+					'color': '#000',
 					'background-color': 'transparent',
 					'text-decoration': 'none'
 				});
 				$('#' + data.bracket[i].roundMatch + 'p2 > .name').css({
-					'color': '#fff',
+					'color': '#000',
 					'background-color': 'transparent',
 					'text-decoration': 'none'
 				});

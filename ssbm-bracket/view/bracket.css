@@ -1,18 +1,3 @@
-@font-face {
-	font-family: 'OswaldRegular';
-    src: url('img/fonts/Oswald-Regular.eot');
-    src: url('img/fonts/Oswald-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'OswaldBold';
-    src: url('img/fonts/Oswald-Bold.eot');
-    src: url('img/fonts/Oswald-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 #info {
 	width: 1920px;
 	height: 150px;
@@ -45,8 +30,8 @@
 .player {
 	width: 220px;
 	height: 30px;
-	background-color: #d52134;
-	border: 2px solid #8b0000;
+	background-color: #007fdc;
+	border: 2px solid #005ea3;
 	box-sizing: border-box;
 	font-family: 'Oxygen', helvetica, arial;
 	text-align: center;
@@ -72,7 +57,7 @@
 	float: left;
 	width: 30px;
 	height: 28px;
-	border-left: 2px solid #8b0000;
+	border-left: 2px solid #005ea3;
 	box-sizing: border-box;
 	font-family: 'Oxygen', helvetica, arial;
 	text-align: center;
