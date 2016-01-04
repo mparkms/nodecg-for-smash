@@ -1,5 +1,5 @@
 {
-    "name": "ssbm-top-info",
+    "name": "ssbm-bg-helper",
     "dependencies": {
         "jquery": "^2.1.0"
     }

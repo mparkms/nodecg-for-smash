@@ -1,5 +1,5 @@
 {
-    "name": "ssbm-bracket",
+    "name": "ssbm-crew-roster",
     "dependencies": {
         "jquery": "^2.1.0"
     }
