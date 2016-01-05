@@ -4,15 +4,29 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 
 ## How to use
 
+### Everything pre-packaged (Windows only)
+1. Download the pre-packaged zip file below and extract.
+2. In command prompt/terminal, navigate to the `/nodecg` directory in the folder you extracted it to.
+  * In Windows, you can shift+right click in the explorer window you have the directory open in and click 'Open command window here'.
+3. In command prompt/terminal, type in `node.exe index.js` and hit enter.
+4. If you want to use the scene change bundle, set up [OBS Remote](http://www.obsremote.com/) with no password and install [OBS Remote JS](https://github.com/nodecg/obs-remote-js). If you want to use the pull from Challonge feature in the bracket bundle, get a [Challonge API key](http://api.challonge.com/v1) and replace ENTER API KEY HERE in /ssbm-bracket/node-challonge-ext.js with it.
+6. Go to localhost:9090 in your web browser to open the dashboard.
+7. Set up your stream overlay in OBS using [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) and the links to the bundle views, available in the info button for each bundle in the dashboard.
+  * Alternatively, just import the default scene collection given in the `/obs` directory. Make sure CLR Browser is installed. If you want, you can also use the overlay given in the `/images` directory or make your own using the template in `/images/templates`.
+8. Use.
+9. This setup is portable, meaning that you can take your NodeCG setup to any Windows computer; just copy your nodecg folder.
+
+### Setup from scratch (Other OSs)
 1. Install [Node.js](https://nodejs.org/en/).
 2. Follow the [NodeCG install guide](http://nodecg.com/starter/installing.html)
-3. Clone/download this repo, put the contents in the /bundles directory in the NodeCG directory
+3. Download the source zip file below, put the contents in the /bundles directory in the NodeCG directory
 4. If you want to use the scene change bundle, set up [OBS Remote](http://www.obsremote.com/) with no password and install [OBS Remote JS](https://github.com/nodecg/obs-remote-js). If you want to use the pull from Challonge feature in the bracket bundle, get a [Challonge API key](http://api.challonge.com/v1) and replace ENTER API KEY HERE in /ssbm-bracket/node-challonge-ext.js with it.
 5. Start NodeCG
 6. Go to localhost:9090 in your web browser to open the dashboard.
 7. Set up your stream overlay in OBS using [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) and the links to the bundle views, available in the info button for each bundle in the dashboard.
   * Alternatively, just import the default scene collection given in the `/obs` directory. Make sure CLR Browser is installed. If you want, you can also use the overlay given in the `/images` directory or make your own using the template in `/images/templates`.
 8. Use.
+9. This setup can be made portable, just put the appropriate Node.js executable for your OS in the NodeCG folder and copy that folder.
 
 ## Overview of included bundles
 
@@ -50,7 +64,7 @@ Misc. info display to show at the top of the game screen. You can also send a po
 
 ### ssbm-bg-helper
 
-Helper bundle to adjust the backgrounds for ssbm-4playres, ssbm-playercam, ssbm-players, and ssbm-top-info. Choose to use an image or a solid color with adjustable corner radius.
+Helper bundle to adjust the backgrounds for ssbm-4players, ssbm-playercam, ssbm-players, and ssbm-top-info. Choose to use an image or a solid color with adjustable corner radius.
 
 ## Images
 
