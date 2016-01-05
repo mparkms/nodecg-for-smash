@@ -5,7 +5,7 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 ## How to use
 
 ### Everything pre-packaged (Windows only)
-1. Download the pre-packaged zip file below and extract.
+1. Download the pre-packaged zip file in releases and extract.
 2. In command prompt/terminal, navigate to the `/nodecg` directory in the folder you extracted it to.
   * In Windows, you can shift+right click in the explorer window you have the directory open in and click 'Open command window here'.
 3. In command prompt/terminal, type in `node.exe index.js` and hit enter.
@@ -19,7 +19,7 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 ### Setup from scratch (Other OSs)
 1. Install [Node.js](https://nodejs.org/en/).
 2. Follow the [NodeCG install guide](http://nodecg.com/starter/installing.html)
-3. Download the source zip file below, put the contents in the /bundles directory in the NodeCG directory
+3. Download the source zip file in releases, put the contents in the /bundles directory in the NodeCG directory
 4. If you want to use the scene change bundle, set up [OBS Remote](http://www.obsremote.com/) with no password and install [OBS Remote JS](https://github.com/nodecg/obs-remote-js). If you want to use the pull from Challonge feature in the bracket bundle, get a [Challonge API key](http://api.challonge.com/v1) and replace ENTER API KEY HERE in /ssbm-bracket/node-challonge-ext.js with it.
 5. Start NodeCG
 6. Go to localhost:9090 in your web browser to open the dashboard.
