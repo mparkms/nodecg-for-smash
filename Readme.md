@@ -1,6 +1,6 @@
 # NodeCG for Smash
 
-Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee streams. Compatible with OBS. Xsplit may work, but I haven't tested it. This is browser-based, so it'll work on any OS.
+Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee streams. Compatible with OBS. Xsplit may work, but I haven't tested it. This is browser-based, so it'll work on any OS. Written for Webkit, so the views may not work on Firefox/IE/Edge/etc, but it doesn't matter because OBS's browser plugin uses Chromium.
 
 ## How to use
 

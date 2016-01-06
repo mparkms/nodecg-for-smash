@@ -2,7 +2,7 @@ module.exports = function(nodecg) {
 	var challonge = require('./node-challonge');
 
 	var client = challonge.createClient({
-		apiKey: 'YlETxrtIVBw6w1WQNJNFpqsrMIqwFEIoFy5472Uy'
+		apiKey: 'ENTER API KEY HERE'
 	});
 
 	var matches = {};
