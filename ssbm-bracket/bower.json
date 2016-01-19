@@ -1,6 +1,0 @@
-{
-    "name": "ssbm-bracket",
-    "dependencies": {
-        "jquery": "^2.1.0"
-    }
-}

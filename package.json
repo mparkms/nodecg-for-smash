@@ -1,0 +1,92 @@
+{
+	"name": "nodecg-for-smash",
+	"version": "0.2",
+	"description": "NodeCG bundle for SSBM streams",
+	"hompeage": "https://github.com/mparkms/nodecg-for-smash",
+	"license": "MIT",
+	"author": "Mike Park <mikeparkms@gmail.com> (www.mikeparkms.com)",
+	"nodecg": {
+		"compatibleRange": "~0.7.0",
+		"dashboardPanels": [
+			{
+				"name": "ssbm-players",
+				"title": "Players & Score",
+				"width": 2,
+				"headerColor": "#2d4e8a",
+				"file": "players.html"
+			},
+			{
+				"name": "ssbm-bg-helper",
+				"title": "Change backgrounds",
+				"width": 2,
+				"headerColor": "#2d4e8a",
+				"file": "bg-helper.html"
+			},
+			{
+				"name": "ssbm-bracket",
+				"title": "Bracket",
+				"width": 2,
+				"headerColor": "#2d4e8a",
+				"file": "bracket.html"
+			},
+			{
+				"name": "ssbm-crew-roster",
+				"title": "Crew Battle Rosters",
+				"width": 4,
+				"headerColor": "#2d4e8a",
+				"file": "crew-roster.html"
+			},
+			{
+				"name": "ssbm-misc-text",
+				"title": "Top Info, Playercam, Lower Third",
+				"width": 2,
+				"headerColor": "#2d4e8a",
+				"file": "misc-text.html"
+			},
+			{
+				"name": "ssbm-scene-change",
+				"title": "Scene Transitions",
+				"width": 2,
+				"headerColor": "#2d4e8a",
+				"file": "scene-change.html"
+			}
+		],
+		"graphics": [
+			{
+				"file": "players.html",
+				"width": 1290,
+				"height": 1060
+			},
+			{
+				"file": "bracket.html",
+				"width": 1500,
+				"height": 900
+			},
+			{
+				"file": "crew-roster.html",
+				"width": 550,
+				"height": 330
+			},
+			{
+				"file": "playercam.html",
+				"width": 500,
+				"height": 40
+			},
+			{
+				"file": "lower-third.html",
+				"width": 1700,
+				"height": 250
+			},
+			{
+				"file": "scene-change.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "top-info.html",
+				"width": 1290,
+				"height": 60
+			}
+		]
+	}
+}
