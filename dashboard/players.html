@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="components/jquery/dist/jquery.min.js"></script>
 
 	<link rel="import" href="components/paper-input/paper-input.html">
 	<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
 	<link rel="import" href="components/paper-menu/paper-menu.html">
 	<link rel="import" href="components/paper-item/paper-item.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
 	<link rel="import" href="components/iron-flex-layout/classes/iron-flex-layout.html">
 </head>
 
+<body>
 <datalist id="characters">
 	<option value="None">
 	<option value="Fox">
@@ -293,27 +297,62 @@
 <option value="Zimbabwe">
 </datalist>
 
-<div class="layout horizontal">
-	<div class="flex">
-		<div>
-			<paper-input id="ssbm-p1Tag" label="Player 1 Tag"></paper-input>
-		</div>
-		<div>
-			<paper-input type="number" value="0" label="Player 1 Score"></paper-input>
+<paper-button raised id="ssbm-players-toggle" style="width: 100%">Toggle 2/4 players</paper-button>
+<div class="layout horizontal" id="p1p2">
+	<div class="flex" style="padding-right: 5px">
+		<div class="horizontal layout">
+			<div class="flex-2" style="padding-right:2px">
+				<paper-input id="ssbm-p1Tag" label="Player 1 Tag"></paper-input>
+			</div>
+			<div class="flex" style="padding-left:2px">
+				<paper-input type="number" value="0" label="Player 1 Score"></paper-input>
+			</div>
 		</div>
 		<paper-input label="Player 1 Character" list="characters" autocomplete="on"></paper-input>
 		<paper-input label="Player 1 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
-	<div class="flex">
-		<div>
-			<paper-input id="ssbm-p2Tag" label="Player 2 Tag"></paper-input>
-		</div>
-		<div>
-			<paper-input type="number" value="0" label="Player 2 Score"></paper-input>
+	<div class="flex" style="padding-left: 5px">
+		<div class="horizontal layout">
+			<div class="flex-2" style="padding-right:2px">
+				<paper-input id="ssbm-p2Tag" label="Player 2 Tag"></paper-input>
+			</div>
+			<div class="flex" style="padding-left:2px">
+				<paper-input type="number" value="0" label="Player 2 Score"></paper-input>
+			</div>
 		</div>
 		<paper-input label="Player 2 Character" list="characters" autocomplete="on"></paper-input>
 		<paper-input label="Player 2 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
 </div>
-<button type="button" class="ssbm-players-update btn btn-xs btn-primary" style="width: 100%">Update</button>
-<button type="button" class="ssbm-players-swap btn btn-xs btn-primary" style="width: 100%">Swap players</button>
+<div class="layout horizontal" id="p3p4" style="display:none">
+	<div class="flex" style="padding-right: 5px">
+		<div class="horizontal layout">
+			<div class="flex-2" style="padding-right:2px">
+				<paper-input id="ssbm-p3Tag" label="Player 3 Tag"></paper-input>
+			</div>
+			<div class="flex" style="padding-left:2px">
+				<paper-input type="number" value="0" label="Player 3 Score"></paper-input>
+			</div>
+		</div>
+		<paper-input label="Player 3 Character" list="characters" autocomplete="on"></paper-input>
+		<paper-input label="Player 3 Country" list="countries" autocomplete="on"></paper-input>
+	</div>
+	<div class="flex" style="padding-left: 5px">
+		<div class="horizontal layout">
+			<div class="flex-2" style="padding-right:2px">
+				<paper-input id="ssbm-p4Tag" label="Player 4 Tag"></paper-input>
+			</div>
+			<div class="flex" style="padding-left:2px">
+				<paper-input type="number" value="0" label="Player 4 Score"></paper-input>
+			</div>
+		</div>
+		<paper-input label="Player 4 Character" list="characters" autocomplete="on"></paper-input>
+		<paper-input label="Player 4 Country" list="countries" autocomplete="on"></paper-input>
+	</div>
+</div>
+<paper-button raised id="ssbm-players-update" style="width: 100%">Update</paper-button>
+<paper-button raised id="ssbm-players-swap" style="width: 100%">Swap players</paper-button>
+
+<script src="players.js"></script>
+</body>
+</html>
