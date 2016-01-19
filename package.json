@@ -11,7 +11,7 @@
 			{
 				"name": "ssbm-players",
 				"title": "Players & Score",
-				"width": 2,
+				"width": 4,
 				"headerColor": "#2d4e8a",
 				"file": "players.html"
 			},
