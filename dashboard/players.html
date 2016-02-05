@@ -3,6 +3,9 @@
 <head>
 	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<script src="components/jquery/dist/jquery.min.js"></script>
+	<script src="countrycodes.js"></script>
+
+	<link href="players.css" rel="stylesheet">
 
 	<link rel="import" href="components/paper-input/paper-input.html">
 	<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
@@ -85,7 +88,7 @@
 <option value="Benin">
 <option value="Bermuda">
 <option value="Bhutan">
-<option value="Bolivia, Plurinational State of">
+<option value="Bolivia">
 <option value="Bonaire, Sint Eustatius and Saba">
 <option value="Bosnia and Herzegovina">
 <option value="Botswana">
@@ -109,7 +112,7 @@
 <option value="Colombia">
 <option value="Comoros">
 <option value="Congo">
-<option value="Congo, the Democratic Republic of the">
+<option value="Congo, Democratic Republic">
 <option value="Cook Islands">
 <option value="Costa Rica">
 <option value="Côte d'Ivoire">
@@ -170,8 +173,8 @@
 <option value="Kazakhstan">
 <option value="Kenya">
 <option value="Kiribati">
-<option value="Korea, Democratic People's Republic of">
-<option value="Korea, Republic of">
+<option value="North Korea">
+<option value="South Korea">
 <option value="Kuwait">
 <option value="Kyrgyzstan">
 <option value="Lao People's Democratic Republic">
@@ -184,7 +187,7 @@
 <option value="Lithuania">
 <option value="Luxembourg">
 <option value="Macao">
-<option value="Macedonia, the former Yugoslav Republic of">
+<option value="Macedonia">
 <option value="Madagascar">
 <option value="Malawi">
 <option value="Malaysia">
@@ -197,7 +200,7 @@
 <option value="Mauritius">
 <option value="Mayotte">
 <option value="Micronesia, Federated States of">
-<option value="Moldova, Republic of">
+<option value="Moldova">
 <option value="Monaco">
 <option value="Mongolia">
 <option value="Montenegro">
@@ -234,11 +237,11 @@
 <option value="Romania">
 <option value="Russian Federation">
 <option value="Rwanda">
-<option value="Saint Barthélemy">
-<option value="Saint Helena, Ascension and Tristan da Cunha">
+<option value="Saint Barthelemy">
+<option value="Saint Helena">
 <option value="Saint Kitts and Nevis">
 <option value="Saint Lucia">
-<option value="Saint Martin (French part)">
+<option value="Saint Martin">
 <option value="Saint Pierre and Miquelon">
 <option value="Saint Vincent and the Grenadines">
 <option value="Samoa">
@@ -250,7 +253,6 @@
 <option value="Seychelles">
 <option value="Sierra Leone">
 <option value="Singapore">
-<option value="Sint Maarten (Dutch part)">
 <option value="Slovakia">
 <option value="Slovenia">
 <option value="Solomon Islands">
@@ -265,9 +267,9 @@
 <option value="Swaziland">
 <option value="Switzerland">
 <option value="Syrian Arab Republic">
-<option value="Taiwan, Province of China">
+<option value="Taiwan">
 <option value="Tajikistan">
-<option value="Tanzania, United Republic of">
+<option value="Tanzania">
 <option value="Thailand">
 <option value="Timor-Leste">
 <option value="Togo">
@@ -286,7 +288,7 @@
 <option value="Uruguay">
 <option value="Uzbekistan">
 <option value="Vanuatu">
-<option value="Venezuela, Bolivarian Republic of">
+<option value="Venezuela">
 <option value="Viet Nam">
 <option value="Virgin Islands, British">
 <option value="Virgin Islands, U.S.">
@@ -297,7 +299,45 @@
 <option value="Zimbabwe">
 </datalist>
 
+<style>
+paper-button.indigo {
+    background-color: #2D4E8A;
+    color: white;
+}
+</style>
+
 <paper-button raised id="ssbm-players-toggle" style="width: 100%">Toggle 2/4 players</paper-button>
+<div class="layout horizontal teams" style="display:none">
+	<div class="flex" style="padding-right: 5px">
+		<div class="horizontal layout">
+			<paper-dropdown-menu id="ssbm-team1" style="width:100%;padding-right:5px" label="Team 1" class="team-dropdown flex-2">
+				<paper-menu class="dropdown-content" selected="0">
+					<paper-item>Red</paper-item>
+					<paper-item>Green</paper-item>
+					<paper-item>Blue</paper-item>
+				</paper-menu>
+			</paper-dropdown-menu>
+			<div class="flex" style="padding-left:2px">
+				<paper-input id="ssbm-team1Score" type="number" value="0" label="Player 1 Score"></paper-input>
+			</div>
+		</div>
+	</div>
+	<div class="flex" style="padding-left: 5px">
+		<div class="horizontal layout">
+			<paper-dropdown-menu id="ssbm-team1" style="width:100%;padding-right:5px" label="Team 1" class="team-dropdown flex-2">
+				<paper-menu class="dropdown-content" selected="0">
+					<paper-item>Red</paper-item>
+					<paper-item>Green</paper-item>
+					<paper-item>Blue</paper-item>
+				</paper-menu>
+			</paper-dropdown-menu>
+			<div class="flex" style="padding-left:2px">
+				<paper-input id="ssbm-team1Score" type="number" value="0" label="Player 1 Score"></paper-input>
+			</div>
+		</div>
+	</div>
+</div>
+<hr class="teams" style="display:none">
 <div class="layout horizontal" id="p1p2">
 	<div class="flex" style="padding-right: 5px">
 		<div class="horizontal layout">
@@ -305,11 +345,18 @@
 				<paper-input id="ssbm-p1Tag" label="Player 1 Tag"></paper-input>
 			</div>
 			<div class="flex" style="padding-left:2px">
-				<paper-input type="number" value="0" label="Player 1 Score"></paper-input>
+				<paper-input id="ssbm-p1Score" type="number" value="0" label="Player 1 Score"></paper-input>
 			</div>
 		</div>
-		<paper-input label="Player 1 Character" list="characters" autocomplete="on"></paper-input>
-		<paper-input label="Player 1 Country" list="countries" autocomplete="on"></paper-input>
+		<paper-dropdown-menu id="ssbm-p1Team" label="Player 1 Team" class="team-dropdown">
+			<paper-menu class="dropdown-content" id="p1Team-menu" selected="0">
+				<option value="0">Red</paper-item>
+				<option value="1">Green</paper-item>
+				<option value="2">Blue</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+		<paper-input id="ssbm-p1Char" label="Player 1 Character" list="characters" autocomplete="on" class="character-select"></paper-input>
+		<paper-input id="ssbm-p1Flag" label="Player 1 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
 	<div class="flex" style="padding-left: 5px">
 		<div class="horizontal layout">
@@ -317,11 +364,18 @@
 				<paper-input id="ssbm-p2Tag" label="Player 2 Tag"></paper-input>
 			</div>
 			<div class="flex" style="padding-left:2px">
-				<paper-input type="number" value="0" label="Player 2 Score"></paper-input>
+				<paper-input id="ssbm-p2Score" type="number" value="0" label="Player 2 Score"></paper-input>
 			</div>
 		</div>
-		<paper-input label="Player 2 Character" list="characters" autocomplete="on"></paper-input>
-		<paper-input label="Player 2 Country" list="countries" autocomplete="on"></paper-input>
+		<paper-dropdown-menu id="ssbm-p2Team" label="Player 2 Team" class="team-dropdown">
+			<paper-menu class="dropdown-content" id="p2Team-menu" selected="0">
+				<option value="0">Red</paper-item>
+				<option value="1">Green</paper-item>
+				<option value="2">Blue</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+		<paper-input id="ssbm-p2Char" label="Player 2 Character" list="characters" autocomplete="on" class="character-select"></paper-input>
+		<paper-input id="ssbm-p2Flag" label="Player 2 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
 </div>
 <div class="layout horizontal" id="p3p4" style="display:none">
@@ -331,11 +385,17 @@
 				<paper-input id="ssbm-p3Tag" label="Player 3 Tag"></paper-input>
 			</div>
 			<div class="flex" style="padding-left:2px">
-				<paper-input type="number" value="0" label="Player 3 Score"></paper-input>
+				<paper-input id="ssbm-p3Score" type="number" value="0" label="Player 3 Score"></paper-input>
 			</div>
 		</div>
-		<paper-input label="Player 3 Character" list="characters" autocomplete="on"></paper-input>
-		<paper-input label="Player 3 Country" list="countries" autocomplete="on"></paper-input>
+		<paper-dropdown-menu id="ssbm-p3Team" label="Player 3 Team" class="team-dropdown">
+			<paper-menu class="dropdown-content" selected="0">
+				<paper-item value="0">Red</paper-item>
+				<paper-item value="1">Green</paper-item>
+				<paper-item value="2">Blue</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+		<paper-input id="ssbm-p3Flag" label="Player 3 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
 	<div class="flex" style="padding-left: 5px">
 		<div class="horizontal layout">
@@ -343,14 +403,43 @@
 				<paper-input id="ssbm-p4Tag" label="Player 4 Tag"></paper-input>
 			</div>
 			<div class="flex" style="padding-left:2px">
-				<paper-input type="number" value="0" label="Player 4 Score"></paper-input>
+				<paper-input id="ssbm-p4Score" type="number" value="0" label="Player 4 Score"></paper-input>
 			</div>
 		</div>
-		<paper-input label="Player 4 Character" list="characters" autocomplete="on"></paper-input>
-		<paper-input label="Player 4 Country" list="countries" autocomplete="on"></paper-input>
+		<paper-dropdown-menu id="ssbm-p4Team" label="Player 4 Team" class="team-dropdown">
+			<paper-menu class="dropdown-content" selected="0">
+				<paper-item value="0">Red</paper-item>
+				<paper-item value="1">Green</paper-item>
+				<paper-item value="2">Blue</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+		<paper-input id="ssbm-p4Flag" label="Player 4 Country" list="countries" autocomplete="on"></paper-input>
 	</div>
 </div>
-<paper-button raised id="ssbm-players-update" style="width: 100%">Update</paper-button>
+<hr>
+<paper-button raised class="indigo" id="ssbm-players-update" style="width: 100%">Update</paper-button>
+<div class="layout horizontal" id="swap-dropdowns">
+	<div class="flex">
+		<paper-dropdown-menu disabled="true" id="swap1" class="swaps">
+			<paper-menu class="dropdown-content" selected="0">
+				<paper-item value="1">Player 1</paper-item>
+				<paper-item value="2">Player 2</paper-item>
+				<paper-item value="3">Player 3</paper-item>
+				<paper-item value="4">Player 4</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+	</div>
+	<div class="flex">
+		<paper-dropdown-menu style="width:100%;padding-left:5px;display:none" disabled="true" id="swap2" class="swaps">
+			<paper-menu class="dropdown-content" selected="1">
+				<paper-item value="1">Player 1</paper-item>
+				<paper-item value="2">Player 2</paper-item>
+				<paper-item value="3">Player 3</paper-item>
+				<paper-item value="4">Player 4</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+	</div>
+</div>
 <paper-button raised id="ssbm-players-swap" style="width: 100%">Swap players</paper-button>
 
 <script src="players.js"></script>

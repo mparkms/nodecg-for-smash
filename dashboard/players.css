@@ -1,0 +1,18 @@
+.team-dropdown, .swaps {
+	width: 100%;
+	padding-right: 5px;
+	display: none
+}
+
+.teams {
+	display: none;
+}
+
+#swap2 {
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+#p3p4 {
+	margin-top: 25px;
+}
