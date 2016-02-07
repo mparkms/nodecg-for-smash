@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<head></head>
-<p>Panel 1</p>
-<form class="inline">
-	<div class="form-group">
-		<input type="text" class="form-control" id="ssbm-top-panel1text" placeholder="Text">
-	</div>
-</form>
-<hr>
-<p>Panel 2</p>
-<form class="inline">
-	<div class="form-group">
-		<input type="text" class="form-control" id="ssbm-top-panel2text" placeholder="Text">
-	</div>
-</form>
-<button type="button" class="ssbm-top-update btn btn-xs btn-primary" style="width: 100%">Update</button>
-<button type="button" class="ssbm-top-update-anim btn btn-xs btn-primary" style="width: 100%">Update with animation</button>
-<hr>
-<p>Message</p>
-<form>
-	<div class="form-group">
-		<div class="input-group">
-			<textarea class="form-control" id="ssbm-message-text" placeholder="Message text" rows="2"></textarea>
+<head>
+	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="components/jquery/dist/jquery.min.js"></script>
+
+	<link rel="import" href="components/polymer/polymer.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-input/paper-textarea.html">
+	<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
+	<link rel="import" href="components/paper-menu/paper-menu.html">
+	<link rel="import" href="components/paper-item/paper-item.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/iron-flex-layout/classes/iron-flex-layout.html">	
+</head>
+
+<body>
+<style>
+paper-button.indigo {
+    background-color: #2D4E8A;
+    color: white;
+}
+</style>
+
+<div class="layout horizontal">
+	<div class="flex" style="padding-right: 5px">
+		<paper-input type="text" label="Top Panel 1 Text" id="ssbm-top-panel1text"></paper-input>
+		<paper-input type="text" label="Top Panel 2 Text" id="ssbm-top-panel2text"></paper-input>
+		<div class="layout horizontal">
+			<paper-button raised class="indigo ssbm-top-update">Update</paper-button>
+			<paper-button raised class="indigo ssbm-top-update-anim flex-auto">w/ Animation</paper-button>
 		</div>
+		<paper-textarea id="ssbm-message-text" label="Top panel message text"></paper-textarea>
+		<paper-button raised class="indigo ssbm-top-message" style="width: 100%">Send message</paper-button>
 	</div>
-</form>
-<button type="button" class="ssbm-top-message btn btn-xs btn-primary" style="width: 100%">Send message</button>
+	<div class="flex" style="padding-left: 5px">
+		<paper-textarea id="ssbm-third-top-text" label="Lower third top text"></paper-textarea>
+		<paper-textarea id="ssbm-third-bottom-text" label="Lower third bottom text"></paper-textarea>
+		<div class="layout horizontal">
+			<paper-button raised class="indigo ssbm-third-update">Update</paper-button>
+			<paper-button raised class="indigo ssbm-third-update-anim flex-auto">w/ Animation</paper-button>
+		</div>
+		<paper-input type="text" label="Playercam Text" id="ssbm-playercam-text"></paper-input>
+		<paper-button raised class="indigo ssbm-playercam-update" style="width: 100%">Update playercam</paper-button>
+	</div>
+</div>
+<script src="js/misc-text.js"></script>
+</body>
+</html>

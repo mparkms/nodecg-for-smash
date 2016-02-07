@@ -39,7 +39,7 @@
 			{
 				"name": "ssbm-misc-text",
 				"title": "Top Info, Playercam, Lower Third",
-				"width": 2,
+				"width": 4,
 				"headerColor": "#2d4e8a",
 				"file": "misc-text.html"
 			},

@@ -1,11 +1,11 @@
 <html>
 <head>
-	<link href="players.css" rel="stylesheet"/>
-	<link href="img/flags.css" rel="stylesheet"/>
-	<link href="img/heads.css" rel="stylesheet"/>
+	<link href="css/players.css" rel="stylesheet"/>
+	<link href="img/flags/flags.css" rel="stylesheet"/>
+	<link href="img/heads/heads.css" rel="stylesheet"/>
 
 	<script src="components/jquery/dist/jquery.min.js"></script>
-	<script src="players.js"></script>
+	<script src="js/players.js"></script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -23,20 +23,51 @@
 		})(); 
 	</script>
 	<div id="container">
-		<div id="player1" class="player">
-			<div class="playercontainer">
-				<div id="p1flag" class="flag flag-xx"></div>
-				<div id="p1char" class="head head-none"></div>
-				<div id="p1tag" class="tag"></div>
+		<div id="teams">
+			<div id="team1" class="team">
+				<div id="team1name" class="teamname"></div>
+				<div id="team1score" class="teamscore"></div>
 			</div>
-			<div id="p1score" class="score"></div>
+			<div id="team2" class="team">
+				<div id="team2score" class="teamscore"></div>
+				<div id="team2name" class="teamname"></div>
+			</div>
 		</div>
-		<div id="player2" class="player">
-			<div id="p2score" class="score"></div>
-			<div class="playercontainer">
-				<div id="p2tag" class="tag"></div>
-				<div id="p2char" class="head head-none"></div>
-				<div id="p2flag" class="flag flag-xx"></div>
+		<div id="space"></div>
+		<div id="fourplayers" class="players-container">
+			<div id="player1-4" class="fourplayer">
+				<div id="p1flag-4" class="flag flag-4player flag-xx"></div>
+				<div id="p1tag-4" class="tag-4"></div>
+			</div>
+			<div id="player2-4" class="fourplayer">
+				<div id="p2flag-4" class="flag flag-4player flag-xx"></div>
+				<div id="p2tag-4" class="tag-4"></div>
+			</div>
+			<div id="player3-4" class="fourplayer">
+				<div id="p3flag-4" class="flag flag-4player flag-xx"></div>
+				<div id="p3tag-4" class="tag-4"></div>
+			</div>
+			<div id="player4-4" class="fourplayer">
+				<div id="p4flag-4" class="flag flag-4player flag-xx"></div>
+				<div id="p4tag-4" class="tag-4"></div>
+			</div>
+		</div>
+		<div id="twoplayers" class="players-container">
+			<div id="player1-2" class="twoplayer">
+				<div class="twoplayercontainer">
+					<div id="p1flag-2" class="flag flag-twoplayer flag-xx"></div>
+					<div id="p1char-2" class="head head-none"></div>
+					<div id="p1tag-2" class="tag-2"></div>
+				</div>
+				<div id="p1score-2" class="score"></div>
+			</div>
+			<div id="player2-2" class="twoplayer">
+				<div id="p2score-2" class="score"></div>
+				<div class="twoplayercontainer">
+					<div id="p2tag-2" class="tag-2"></div>
+					<div id="p2char-2" class="head head-none"></div>
+					<div id="p2flag-2" class="flag flag-twoplayer flag-xx"></div>
+				</div>
 			</div>
 		</div>
 	</div>

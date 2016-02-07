@@ -1,17 +1,9 @@
 'use strict';
 
 $(function () {
-	nodecg.listenFor('ssbmTopUpdate', updatePanels);
+	nodecg.listenFor('ssbmTopUpdate', updateText);
+	nodecg.listenFor('ssbmTopUpdateAnim', updatePanelsAnim);
 	nodecg.listenFor('ssbmTopMessage', showMessage);
-
-	function updatePanels(data) {
-		if(data.anim) {
-			updatePanelsAnim(data);
-		}
-		else {
-			updateText(data);
-		}
-	}
 
 	function updatePanelsAnim(data) {
 		$('.panel').animate({top: "-100%"}, {duration: 1000, complete: function () { updateText(data); }});

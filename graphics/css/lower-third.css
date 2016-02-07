@@ -25,7 +25,7 @@ body {
 #logocontainer {
 	width: 300px;
 	height: 230px;
-	background: url('img/logo-background.png');
+	background: url('../img/backgrounds/logo-background.png');
 	position: absolute;
     top: 0%;
 	z-index: 1;
@@ -60,7 +60,7 @@ body {
 #lowerthird {
 	width: 1650px;
 	height: 230px;
-	background: url('img/lower-third-background.png');
+	background: url('../img/backgrounds/lower-third-background.png');
 	/*background-position: 36px;*/
 	/*background: -moz-linear-gradient(left, #ededee 0%, #9e9e9f 100%);
 	background: -webkit-linear-gradient(left, #ededee 0%, #9e9e9f 100%);
