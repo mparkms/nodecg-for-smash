@@ -19,7 +19,7 @@ $(function () {
 	function dropInit() {
 		$('#shuttercontainer').html('');
 		for (var i = 1; i <= numSlices; i++) {
-			$('#shuttercontainer').append('<div id="shutter' + i + '" class="shutter"><img src="img/logo_slices/logo_slice' + i + '.png"></div>');
+			$('#shuttercontainer').append('<div id="shutter' + i + '" class="shutter"><img src="/graphics/nodecg-for-smash/img/logo_slices/logo_slice' + i + '.png"></div>');
 			var bgGradient = shadeColor("#d52134", -15 * (numSlices - i + 1));
 			$('#shutter' + i).css({
 			  'left': (1 / numSlices) * (i - 1) * 100 + "%",

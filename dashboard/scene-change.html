@@ -1,17 +1,71 @@
 <!DOCTYPE html>
-<head></head>
-<form>
-	<div class="form-group">
-		<input type="text" class="form-control" id="ssbm-hostname" placeholder="OBS Remote hostname" value="localhost:4444">
-	</div>
-	<div class="form-group">
-		<select class="form-control" id="ssbm-scenes" size="5">
-		</select>
-	</div>
-</form>
-<button type="button" class="ssbm-scene-update btn btn-xs btn-default" style="width: 100%">Update scenes</button>
+<head>
+	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="components/jquery/dist/jquery.min.js"></script>
+
+	<link href="css/scene-change.css" rel="stylesheet">
+
+	<link rel="import" href="components/polymer/polymer.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-listbox/paper-listbox.html">
+	<link rel="import" href="components/paper-menu/paper-menu.html">
+	<link rel="import" href="components/paper-item/paper-item.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/iron-flex-layout/classes/iron-flex-layout.html">
+</head>
+<body>
+<style>
+paper-button.indigo {
+    background-color: #2D4E8A;
+    color: white;
+}
+</style>
+
+<dom-module name="scenes-list">
+	<template>
+		<paper-menu id="ssbm-scenes" attr-for-selected="value" selected="{{selection}}">
+			<template is="dom-repeat" items="{{scenes}}">
+				<paper-item value="{{item}}">{{item}}</paper-item>
+			</template>
+		</paper-menu>
+	</template>
+	<script>
+		Polymer({
+			is: 'scenes-list',
+			ready: function() {
+				this.scenes = ["a", "b", "c"];
+			},
+			getScenes: function() {
+				console.log(this.scenes);
+			},
+			setScenes: function(scenes) {
+				this.scenes = scenes;
+			},
+			getSelected: function() {
+				return this.selection;
+			}
+		});
+	</script>
+</dom-module>
+
+<paper-input type="text" id="ssbm-hostname" label="OBS Remote hostname" value="localhost:4444"></paper-input>
+<!-- <paper-menu id="ssbm-scenes">
+</paper-menu> -->
+<scenes-list id="scenes"></scenes-list>
+<div class="layout horizontal">
+	<paper-button raised class="ssbm-scene-update flex">Update scenes</paper-button>
+</div>
 <hr>
-<button type="button" class="ssbm-scene-change-no-trans btn btn-xs btn-primary" style="width: 100%">Change scene (no transition)</button>
-<button type="button" class="ssbm-scene-change-trans btn btn-xs btn-primary" style="width: 100%">Change scene (transition)</button>
-<button type="button" class="ssbm-scene-change-trans-down btn btn-xs btn-primary" style="width: 100%">Change scene (only transition down)</button>
-<button type="button" class="ssbm-trans-up btn btn-xs btn-primary" style="width: 100%">Transition up</button>
+<div class="layout horizontal">
+	<paper-button raised class="indigo ssbm-scene-change-no-trans">Change</paper-button>
+	<paper-button class="indigo ssbm-scene-change-trans flex">w/ Transition</paper-button>
+</div>
+<div class="layout horizontal" style="padding-top: 5px">
+	<paper-button raised class="indigo ssbm-scene-change-trans-down flex">Change (Transition down only)</paper-button>
+</div>
+<div class="layout horizontal">
+	<paper-button raised class="ssbm-trans-up flex">Transition up</paper-button>
+</div>
+
+<script src="js/scene-change.js"></script>
+</body>
