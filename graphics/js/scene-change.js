@@ -20,10 +20,10 @@ $(function () {
 		$('#shuttercontainer').html('');
 		for (var i = 1; i <= numSlices; i++) {
 			$('#shuttercontainer').append('<div id="shutter' + i + '" class="shutter"><img src="/graphics/nodecg-for-smash/img/logo_slices/logo_slice' + i + '.png"></div>');
-			var bgGradient = shadeColor("#d52134", -15 * (numSlices - i + 1));
+			var bgGradient = "#00" + shadeColor("#007fdc", -15 * (numSlices - i + 1));
 			$('#shutter' + i).css({
 			  'left': (1 / numSlices) * (i - 1) * 100 + "%",
-			  'background-color': shadeColor("#d52134", -15 * i), //light to dark
+			  'background-color': "#00" + shadeColor("#007fdc", -15 * i), //light to dark
 			  //'background-image': '-webkit-linear-gradient(top, rgba(255,205,40,0) 10%, ' + bgGradient +' 99%)'
 			});
 		}
