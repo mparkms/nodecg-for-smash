@@ -49,6 +49,23 @@
 				"width": 2,
 				"headerColor": "#2d4e8a",
 				"file": "scene-change.html"
+			},
+			{
+				"name": "manual-update",
+				"title": "Manual Update",
+				"width": 2,
+				"dialog": true,
+				"dialogButtons": [
+					{
+						"name": "update",
+						"type": "confirm"
+					},
+					{
+						"name": "done",
+						"type": "dismiss"
+					}
+				],
+				"file": "manual-update.html"
 			}
 		],
 		"graphics": [

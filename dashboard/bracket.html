@@ -1,55 +1,31 @@
 <!DOCTYPE html>
-<head></head>
-<form>
-	<div class="form-group">
-		<input type="text" class="form-control" id="ssbm-bracket-title" placeholder="Bracket Title">
-	</div>
-	<div class="form-group">
-		<input type="text" class="form-control" id="ssbm-bracket-link" placeholder="Challonge link">
-	</div>
-</form>
-<button class="ssbm-bracket-get-challonge btn btn-xs btn-primary" style="width: 100%">Pull from Challonge</button>
+<head>
+	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="components/jquery/dist/jquery.min.js"></script>
+
+	<link rel="import" href="components/polymer/polymer.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
+	<link rel="import" href="components/paper-menu/paper-menu.html">
+	<link rel="import" href="components/paper-item/paper-item.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/iron-flex-layout/classes/iron-flex-layout.html">
+</head>
+
+<body>
+<div class="horizontal layout">
+	<paper-input class="flex" id="ssbm-bracket-title" label="Bracket Title"></paper-input>
+</div>
+<div class="horizontal layout">
+	<paper-input class="flex" id="ssbm-bracket-link" label="Challonge link"></paper-input>
+</div>
+
+<div class="horizontal layout">
+	<paper-button raised class="ssbm-bracket-get-challonge flex">Pull from Challonge</paper-button>
+</div>
 <hr>
-<p>Manual update</p>
-<form>
-	<div class="form-group">
-		<select class="form-control" id="ssbm-bracket-roundmatch">
-			<option selected="selected" disabled="disabled" value="-1">Select a match...</option>
-			<option value="0">R1M1 (winners semis 1)</option>
-			<option value="1">R1M2 (winners semis 2)</option>
-			<option value="2">R2M1 (winners finals)</option>
-			<option value="3">L1M1 (loser gets 7th 1)</option>
-			<option value="4">L1M2 (loser gets 7th 2)</option>
-			<option value="5">L2M1 (losers quarters 1)</option>
-			<option value="6">L2M2 (losers quarters 2)</option>
-			<option value="7">L3M1 (losers semis)</option>
-			<option value="8">L4M1 (losers finals)</option>
-			<option value="9">R3M1 (grand finals set 1)</option>
-			<option value="10">R3M2 (grand finals set 2)</option>
-		</select>
-	</div>
-	<div class="row">
-		<div class="form-group col-xs-8" style="padding-right: 2px">
-			<input type="text" class="form-control" id="ssbm-bracket-p1name" placeholder="Player 1">
-		</div>
-		<div class="form-group col-xs-4" style="padding-left: 2px">
-			<input type="number" class="form-control" id="ssbm-bracket-p1score" value="0">
-		</div>
-	</div>
-	<div class="row">
-		<div class="form-group col-xs-8" style="padding-right: 2px">
-			<input type="text" class="form-control" id="ssbm-bracket-p2name" placeholder="Player 2">
-		</div>
-		<div class="form-group col-xs-4" style="padding-left: 2px">
-			<input type="number" class="form-control" id="ssbm-bracket-p2score" value="0">
-		</div>
-	</div>
-	<div class="form-group">
-		<select class="form-control" id="ssbm-bracket-winner">
-			<option value="0">No winner</option>
-			<option value="1">Player 1 wins</option>
-			<option value="2">Player 2 wins</option>
-		</select>
-	</div>
-</form>
-<button class="ssbm-bracket-manual-update btn btn-xs btn-primary" style="width: 100%">Manual Update</button>
+<div class="horizontal layout">
+	<paper-button raised class="flex" nodecg-dialog="manual-update">Manual Update</paper-button>
+</div>
+<script src="js/bracket.js"></script>
+</body>

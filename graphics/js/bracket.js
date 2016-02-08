@@ -2,6 +2,7 @@
 
 $(function() {
 	nodecg.listenFor('ssbmBracketUpdate', updateBracket);
+	nodecg.listenFor('ssbmBracketUpdateOnly', updateBracketOnly)
 
 	function updateBracket(data) {
 		var loser = [0, 2, 1];
@@ -37,5 +38,9 @@ $(function() {
 		}
 		$('#bracket-link').text(data.link);
 		$('#bracket-name').text(data.title);
+	}
+
+	function updateBracketOnly(data) {
+		updateBracket({'bracket': data, 'link': $('#bracket-link').val(), 'title': $('#bracket-name').val()});
 	}
 });
