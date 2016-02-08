@@ -27,6 +27,7 @@ paper-button.indigo {
 		</div>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'crew-score',
 			ready: function() {
@@ -39,6 +40,7 @@ paper-button.indigo {
 				return this.score;
 			}
 		});
+	});
 	</script>
 </dom-module>
 
@@ -52,6 +54,7 @@ paper-button.indigo {
 		</div>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is:'crew-member',
 			ready: function() {
@@ -64,6 +67,7 @@ paper-button.indigo {
 				return this.ko;
 			}
 		});
+	});
 	</script>
 </dom-module>
 

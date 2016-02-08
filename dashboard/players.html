@@ -4,6 +4,7 @@
 	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
 	<script src="components/jquery/dist/jquery.min.js"></script>
 	<script src="js/countrycodes.js"></script>
+	<script src="js/characters.js"></script>
 
 	<link href="css/players.css" rel="stylesheet">
 
@@ -325,6 +326,7 @@ paper-button.indigo {
 		</div>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'teams-score',
 			ready: function() {
@@ -338,6 +340,7 @@ paper-button.indigo {
 				return this.score;
 			}
 		})
+	});
 	</script>
 </dom-module>
 
@@ -352,6 +355,7 @@ paper-button.indigo {
 		</paper-dropdown-menu>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'team-dropdown',
 			ready: function() {
@@ -364,6 +368,7 @@ paper-button.indigo {
 				this.selected = selected;
 			}
 		});
+	});
 	</script>
 </dom-module>
 
@@ -384,6 +389,7 @@ paper-button.indigo {
 		</div>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'player-info',
 			ready: function() {
@@ -414,6 +420,7 @@ paper-button.indigo {
 				this.flag = flag;
 			}
 		});
+	});
 	</script>
 </dom-module>
 
@@ -431,6 +438,7 @@ paper-button.indigo {
 		</div>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'swap-dropdown',
 			ready: function() {
@@ -440,6 +448,7 @@ paper-button.indigo {
 				return this.selected;
 			}
 		});
+	});
 	</script>
 </dom-module>
 

@@ -30,6 +30,7 @@ paper-button.indigo {
 		</paper-menu>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'scenes-list',
 			ready: function() {
@@ -45,6 +46,7 @@ paper-button.indigo {
 				return this.selection;
 			}
 		});
+	});
 	</script>
 </dom-module>
 

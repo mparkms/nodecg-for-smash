@@ -32,11 +32,12 @@
 		</paper-dropdown-menu>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'match-dropdown',
 			ready: function() {
 				this.selected = 0;
-			}
+			},
 			getSelected: function() {
 				return this.selected;
 			},
@@ -45,6 +46,7 @@
 				roundMatch.value = this.selected;
 			}
 		});
+	});
 	</script>
 </dom-module>
 <dom-module name="winner-dropdown">
@@ -58,6 +60,7 @@
 		</paper-dropdown-menu>
 	</template>
 	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
 		Polymer({
 			is: 'winner-dropdown',
 			getSelected: function() {
@@ -67,6 +70,7 @@
 				this.selected = selected;
 			}
 		});
+	});
 	</script>
 </dom-module>
 
