@@ -307,143 +307,165 @@ paper-button.indigo {
 }
 </style>
 
+<dom-module name="teams-score" attributes="number">
+	<template>
+		<div class="flex" style="padding-right: 5px">
+			<div class="horizontal layout">
+				<paper-dropdown-menu id="ssbm-team{{number}}" style="width:100%;padding-right:5px" label="Team {{number}}" class="team-dropdown flex-2">
+					<paper-menu class="dropdown-content" selected="{{team}}" attr-for-selected="value">
+						<paper-item value="Red">Red</paper-item>
+						<paper-item value="Green">Green</paper-item>
+						<paper-item value="Blue">Blue</paper-item>
+					</paper-menu>
+				</paper-dropdown-menu>
+				<div class="flex" style="padding-left:2px">
+					<paper-input id="ssbm-team{{number}}Score" type="number" value="{{score}}" label="Team {{number}} Score"></paper-input>
+				</div>
+			</div>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'teams-score',
+			ready: function() {
+				this.team = "Red";
+				this.score = 0;
+			},
+			getTeam: function() {
+				return this.team;
+			},
+			getScore: function() {
+				return this.score;
+			}
+		})
+	</script>
+</dom-module>
+
+<dom-module name="team-dropdown" attributes="player">
+	<template>
+		<paper-dropdown-menu id="ssbm-p{{player}}Team" label="Player {{player}} Team" class="team-dropdown">
+			<paper-menu class="dropdown-content" id="p{{player}}Team-menu" attr-for-selected="value" selected="{{selected}}">
+				<paper-item value="Red">Red</paper-item>
+				<paper-item value="Green">Green</paper-item>
+				<paper-item value="Blue">Blue</paper-item>
+			</paper-menu>
+		</paper-dropdown-menu>
+	</template>
+	<script>
+		Polymer({
+			is: 'team-dropdown',
+			ready: function() {
+				this.selected = "Red";
+			},
+			getSelected: function() {
+				return this.selected;
+			},
+			setSelected: function(selected) {
+				this.selected = selected;
+			}
+		});
+	</script>
+</dom-module>
+
+<dom-module name="player-info" attributes="player">
+	<template>
+		<div class="flex" style="padding-right: 5px">
+			<div class="horizontal layout">
+				<div class="flex-2" style="padding-right:2px">
+					<paper-input id="ssbm-p{{player}}Tag" label="Player {{player}} Tag" value="{{tag}}"></paper-input>
+				</div>
+				<div class="flex" style="padding-left:2px">
+					<paper-input class="player-score" id="ssbm-p{{player}}Score" type="number" label="Player {{player}} Score" value="{{score}}"></paper-input>
+				</div>
+			</div>
+			<team-dropdown player="1" id="team-dropdown{{player}}"></team-dropdown>
+			<paper-input id="ssbm-p{{player}}Char" label="Player {{player}} Character" list="characters" autocomplete="on" class="character-select" value="{{character}}"></paper-input>
+			<paper-input id="ssbm-p{{player}}Flag" label="Player {{player}} Country" list="countries" autocomplete="on" value="{{flag}}"></paper-input>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'player-info',
+			ready: function() {
+				this.score = 0;
+			},
+			getTag: function() {
+				return this.tag;
+			},
+			setTag: function(tag) {
+				this.tag = tag;
+			},
+			getScore: function() {
+				return this.score;
+			},
+			setScore: function(score) {
+				this.score = score;
+			},
+			getCharacter: function() {
+				return this.character;
+			},
+			setCharacter: function(character) {
+				this.character = character;
+			},
+			getFlag: function() {
+				return this.flag;
+			},
+			setFlag: function(flag) {
+				this.flag = flag;
+			}
+		});
+	</script>
+</dom-module>
+
+<dom-module name="swap-dropdown">
+	<template>
+		<div class="flex">
+			<paper-dropdown-menu class="swaps" style="width:100%">
+				<paper-menu class="dropdown-content" attr-for-selected="value" selected="{{selected}}">
+					<paper-item value="1">Player 1</paper-item>
+					<paper-item value="2">Player 2</paper-item>
+					<paper-item value="3">Player 3</paper-item>
+					<paper-item value="4">Player 4</paper-item>
+				</paper-menu>
+			</paper-dropdown-menu>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			is: 'swap-dropdown',
+			ready: function() {
+				this.selected = 1;
+			},
+			getSelected: function() {
+				return this.selected;
+			}
+		});
+	</script>
+</dom-module>
+
 <div class="layout horizontal">
 	<paper-button raised class="flex" id="ssbm-players-toggle" style="width: 100%">Toggle 2/4 players</paper-button>
 </div>
 <div class="layout horizontal teams" style="display:none">
-	<div class="flex" style="padding-right: 5px">
-		<div class="horizontal layout">
-			<paper-dropdown-menu id="ssbm-team1" style="width:100%;padding-right:5px" label="Team 1" class="team-dropdown flex-2">
-				<paper-menu class="dropdown-content" selected="0">
-					<paper-item>Red</paper-item>
-					<paper-item>Green</paper-item>
-					<paper-item>Blue</paper-item>
-				</paper-menu>
-			</paper-dropdown-menu>
-			<div class="flex" style="padding-left:2px">
-				<paper-input id="ssbm-team1Score" type="number" value="0" label="Team 1 Score"></paper-input>
-			</div>
-		</div>
-	</div>
-	<div class="flex" style="padding-left: 5px">
-		<div class="horizontal layout">
-			<paper-dropdown-menu id="ssbm-team2" style="width:100%;padding-right:5px" label="Team 2" class="team-dropdown flex-2">
-				<paper-menu class="dropdown-content" selected="0">
-					<paper-item>Red</paper-item>
-					<paper-item>Green</paper-item>
-					<paper-item>Blue</paper-item>
-				</paper-menu>
-			</paper-dropdown-menu>
-			<div class="flex" style="padding-left:2px">
-				<paper-input id="ssbm-team2Score" type="number" value="0" label="Team 2 Score"></paper-input>
-			</div>
-		</div>
-	</div>
+	<teams-score number="1" id="team1"></teams-score>
+	<teams-score number="2" id="team2"></teams-score>
 </div>
 <hr class="teams" style="display:none">
 <div class="layout horizontal" id="p1p2">
-	<div class="flex" style="padding-right: 5px">
-		<div class="horizontal layout">
-			<div class="flex-2" style="padding-right:2px">
-				<paper-input id="ssbm-p1Tag" label="Player 1 Tag"></paper-input>
-			</div>
-			<div class="flex" style="padding-left:2px">
-				<paper-input class="player-score" id="ssbm-p1Score" type="number" value="0" label="Player 1 Score"></paper-input>
-			</div>
-		</div>
-		<paper-dropdown-menu id="ssbm-p1Team" label="Player 1 Team" class="team-dropdown">
-			<paper-menu class="dropdown-content" id="p1Team-menu" selected="0">
-				<paper-item value="0">Red</paper-item>
-				<paper-item value="1">Green</paper-item>
-				<paper-item value="2">Blue</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-		<paper-input id="ssbm-p1Char" label="Player 1 Character" list="characters" autocomplete="on" class="character-select"></paper-input>
-		<paper-input id="ssbm-p1Flag" label="Player 1 Country" list="countries" autocomplete="on"></paper-input>
-	</div>
-	<div class="flex" style="padding-left: 5px">
-		<div class="horizontal layout">
-			<div class="flex-2" style="padding-right:2px">
-				<paper-input id="ssbm-p2Tag" label="Player 2 Tag"></paper-input>
-			</div>
-			<div class="flex" style="padding-left:2px">
-				<paper-input class="player-score" id="ssbm-p2Score" type="number" value="0" label="Player 2 Score"></paper-input>
-			</div>
-		</div>
-		<paper-dropdown-menu id="ssbm-p2Team" label="Player 2 Team" class="team-dropdown">
-			<paper-menu class="dropdown-content" id="p2Team-menu" selected="0">
-				<paper-item value="0">Red</paper-item>
-				<paper-item value="1">Green</paper-item>
-				<paper-item value="2">Blue</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-		<paper-input id="ssbm-p2Char" label="Player 2 Character" list="characters" autocomplete="on" class="character-select"></paper-input>
-		<paper-input id="ssbm-p2Flag" label="Player 2 Country" list="countries" autocomplete="on"></paper-input>
-	</div>
+	<player-info player="1" id="player1"></player-info>
+	<player-info player="2" id="player2"></player-info>
 </div>
 <div class="layout horizontal" id="p3p4" style="display:none">
-	<div class="flex" style="padding-right: 5px">
-		<div class="horizontal layout">
-			<div class="flex-2" style="padding-right:2px">
-				<paper-input id="ssbm-p3Tag" label="Player 3 Tag"></paper-input>
-			</div>
-			<div class="flex" style="padding-left:2px">
-				<paper-input class="player-score" id="ssbm-p3Score" type="number" value="0" label="Player 3 Score"></paper-input>
-			</div>
-		</div>
-		<paper-dropdown-menu id="ssbm-p3Team" label="Player 3 Team" class="team-dropdown">
-			<paper-menu class="dropdown-content" selected="0">
-				<paper-item value="0">Red</paper-item>
-				<paper-item value="1">Green</paper-item>
-				<paper-item value="2">Blue</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-		<paper-input id="ssbm-p3Flag" label="Player 3 Country" list="countries" autocomplete="on"></paper-input>
-	</div>
-	<div class="flex" style="padding-left: 5px">
-		<div class="horizontal layout">
-			<div class="flex-2" style="padding-right:2px">
-				<paper-input id="ssbm-p4Tag" label="Player 4 Tag"></paper-input>
-			</div>
-			<div class="flex" style="padding-left:2px">
-				<paper-input class="player-score" id="ssbm-p4Score" type="number" value="0" label="Player 4 Score"></paper-input>
-			</div>
-		</div>
-		<paper-dropdown-menu id="ssbm-p4Team" label="Player 4 Team" class="team-dropdown">
-			<paper-menu class="dropdown-content" selected="0">
-				<paper-item value="0">Red</paper-item>
-				<paper-item value="1">Green</paper-item>
-				<paper-item value="2">Blue</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-		<paper-input id="ssbm-p4Flag" label="Player 4 Country" list="countries" autocomplete="on"></paper-input>
-	</div>
+	<player-info player="3" id="player3"></player-info>
+	<player-info player="4" id="player4"></player-info>
 </div>
 <hr>
 <div class="layout horizontal">
 	<paper-button raised class="indigo flex" id="ssbm-players-update" style="width: 100%">Update</paper-button>
 </div>
 <div class="layout horizontal" id="swap-dropdowns">
-	<div class="flex">
-		<paper-dropdown-menu disabled="true" id="swap1" class="swaps">
-			<paper-menu class="dropdown-content" selected="0">
-				<paper-item value="1">Player 1</paper-item>
-				<paper-item value="2">Player 2</paper-item>
-				<paper-item value="3">Player 3</paper-item>
-				<paper-item value="4">Player 4</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-	</div>
-	<div class="flex">
-		<paper-dropdown-menu style="width:100%;padding-left:5px;display:none" disabled="true" id="swap2" class="swaps">
-			<paper-menu class="dropdown-content" selected="1">
-				<paper-item value="1">Player 1</paper-item>
-				<paper-item value="2">Player 2</paper-item>
-				<paper-item value="3">Player 3</paper-item>
-				<paper-item value="4">Player 4</paper-item>
-			</paper-menu>
-		</paper-dropdown-menu>
-	</div>
+	<swap-dropdown number="1" id="swap1"></swap-dropdown>
+	<swap-dropdown number="2" id="swap2"></swap-dropdown>
 </div>
 <div class="layout horizontal">
 	<paper-button raised class="flex" id="ssbm-players-swap">Swap players</paper-button>
