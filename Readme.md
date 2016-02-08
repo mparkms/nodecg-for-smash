@@ -5,11 +5,12 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 ## How to use
 
 1. Install NodeCG as shown in the instructions on the [NodeCG website.](http://nodecg.com/)
-2. In the command line, enter `nodecg install mparkms/nodecg-for-smash`
-3. Start NodeCG and go to `localhost:9090` in your browser.
-4. Import the scene collection `/obs/scene.xconfig` into OBS or use the links in the Graphics page on the dashboard to make your own scene layout.
-5. If you want to use the Scene Transition panel, install OBS Remote and turn off the password for it.
-6. If you want to use the Bracket panel's Challonge integration, put in your Challonge API key into `extension/node-challonge-ext.js` where it says `ENTER API KEY HERE`.
+2. Install nodecg-cli as shown [here.](https://github.com/nodecg/nodecg-cli)
+3. In the command line, enter `nodecg install mparkms/nodecg-for-smash`
+4. Start NodeCG and go to `localhost:9090` in your browser.
+5. Import the scene collection `/obs/scene.xconfig` into OBS or use the links in the Graphics page on the dashboard to make your own scene layout.
+6. If you want to use the Scene Transition panel, install OBS Remote and turn off the password for it.
+7. If you want to use the Bracket panel's Challonge integration, put in your Challonge API key into `extension/node-challonge-ext.js` where it says `ENTER API KEY HERE`.
 
 ## Overview of included dashboard panels
 
