@@ -49,7 +49,7 @@ paper-button.indigo {
 		<div class="flex">
 			<div class="horizontal layout">
 				<paper-input class="flex-2" style="padding-right:2px" label="Player {{number}}" value="{{tag}}"></paper-input>
-				<paper-checkbox checked="{{ko}}" style="transform: translateY(25%)"></paper-checkbox>
+				<paper-checkbox checked="{{ko}}" style="transform: translateY(25%); margin-left:5px"></paper-checkbox>
 			</div>
 		</div>
 	</template>
@@ -78,7 +78,11 @@ paper-button.indigo {
 </div>
 <hr>
 <div class="horizontal layout">
-	<div class="flex" id="roster1">
+	<div class="flex" id="roster1" style="margin-right: 5px">
+		<div class="horizontal layout">
+			<p class="flex-8" style="margin:0"></p>
+			<p class="flex" style="margin:0">KO?</p>
+		</div>
 		<crew-member number="1"></crew-member>
 		<crew-member number="2"></crew-member>
 		<crew-member number="3"></crew-member>
@@ -90,7 +94,11 @@ paper-button.indigo {
 		<crew-member number="9"></crew-member>
 		<crew-member number="10"></crew-member>
 	</div>
-	<div class="flex" id="roster2">
+	<div class="flex" id="roster2" style="margin-left: 5px">
+		<div class="horizontal layout">
+			<p class="flex-8" style="margin:0"></p>
+			<p class="flex" style="margin:0">KO?</p>
+		</div>
 		<crew-member number="1"></crew-member>
 		<crew-member number="2"></crew-member>
 		<crew-member number="3"></crew-member>
