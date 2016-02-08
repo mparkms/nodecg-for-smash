@@ -1,7 +1,5 @@
 (function() {
 	'use strict';
-	
-	console.log('crew-roster.js');
 
 	var $update = $('.ssbm-crew-update');
 	var $hide = $('.ssbm-crew-hide');
