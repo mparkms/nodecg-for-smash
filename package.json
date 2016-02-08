@@ -16,13 +16,6 @@
 				"file": "players.html"
 			},
 			{
-				"name": "ssbm-bg-helper",
-				"title": "Change backgrounds",
-				"width": 2,
-				"headerColor": "#2d4e8a",
-				"file": "bg-helper.html"
-			},
-			{
 				"name": "ssbm-bracket",
 				"title": "Bracket",
 				"width": 2,
