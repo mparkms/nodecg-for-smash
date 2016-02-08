@@ -1,6 +1,6 @@
 {
 	"name": "nodecg-for-smash",
-	"version": "0.2",
+	"version": "0.2.0",
 	"description": "NodeCG bundle for SSBM streams",
 	"hompeage": "https://github.com/mparkms/nodecg-for-smash",
 	"license": "MIT",
