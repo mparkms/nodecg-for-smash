@@ -2,7 +2,7 @@
 	'use strict';
 
 	window.addEventListener('WebComponentsReady', function(e) {
-		var bracketReplicant = nodecg.Replicant('bracket', {persistent: false});
+		var bracketReplicant = nodecg.Replicant('bracket', {defaultValue: [], persistent: false});
 		var bracket = [];
 		var roundMatchReplicant = nodecg.Replicant('roundMatch', {persistent: false});
 		var roundMatch;
@@ -16,8 +16,8 @@
 			updateFields();
 		})
 
-		 function updateFields() {
-			if (!bracket[roundMatch]) return;
+		function updateFields() {
+			if (!bracket || !bracket[roundMatch]) return;
 			$('#ssbm-bracket-p1name').val(bracket[roundMatch].p1name);
 			$('#ssbm-bracket-p1score').val(bracket[roundMatch].score[0]);
 			$('#ssbm-bracket-p2name').val(bracket[roundMatch].p2name);

@@ -14,6 +14,7 @@
     "paper-input": "PolymerElements/paper-input#1.1.1",
     "paper-item": "PolymerElements/paper-item#^1.1.2",
     "paper-listbox": "PolymerElements/paper-listbox#^1.1.0",
+    "paper-menu": "PolymerElements/paper-menu",
     "paper-progress": "PolymerElements/paper-progress#^1.0.7"
   },
   "resolutions": {
