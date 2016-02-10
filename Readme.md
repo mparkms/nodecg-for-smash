@@ -4,13 +4,21 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 
 ## How to use
 
-1. Install NodeCG as shown in the instructions on the [NodeCG website.](http://nodecg.com/)
-2. Install nodecg-cli as shown [here.](https://github.com/nodecg/nodecg-cli)
-3. In the command line, enter `nodecg install mparkms/nodecg-for-smash`
-4. Start NodeCG and go to `localhost:9090` in your browser.
-5. Import the scene collection `/obs/scene.xconfig` into OBS or use the links in the Graphics page on the dashboard to make your own scene layout.
-6. If you want to use the Scene Transition panel, install OBS Remote and turn off the password for it.
-7. If you want to use the Bracket panel's Challonge integration, put in your Challonge API key into `extension/node-challonge-ext.js` where it says `ENTER API KEY HERE`.
+1. Install [git](https://git-scm.com/). Make sure to select 'Use Git from the Windows Command Prompt' if you're on Windows.
+2. Install NodeCG as shown in the instructions on the [NodeCG website.](http://nodecg.com/) If it tells you `bower` is not recognized, type in `npm install -g bower`.
+3. From this point on, all commands should be in the regular command line, not Node.js. Exit Node.js by hitting ctrl-C twice if you're in Node.js.
+4. Install nodecg-cli as shown [here.](https://github.com/nodecg/nodecg-cli)
+5. In the command line in the folder you installed NodeCG, enter `nodecg install mparkms/nodecg-for-smash`
+6. Start NodeCG by entering `nodecg start` into command prompt in the folder where NodeCG is installed and go to `localhost:9090` in your browser.
+7. Install [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) if you haven't done so already.
+8. In OBS, click Scene Collections > New then Scene Collection > Import then select the scene collection `/obs/scene.xconfig` to import into OBS or use the links in the Graphics page on the dashboard to make your own scene layout.
+9. If you want to use the Scene Transition panel, install OBS Remote and turn off the password for it.
+10. If you want to use the Bracket panel's Challonge integration, put in your Challonge API key into `extension/node-challonge-ext.js` where it says `ENTER API KEY HERE`.
+
+[Installation instruction video - if you're confused about any of the above I suggest watching this.](https://youtu.be/MweCH70GGY4)
+
+[Having problems with installation? Check here.](https://github.com/mparkms/nodecg-for-smash/wiki/Troubleshooting-installation) If that doesn't help, post an issue here or tweet at me @kaabistar
+
 
 ## Overview of included dashboard panels
 
