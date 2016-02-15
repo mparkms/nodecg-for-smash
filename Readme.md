@@ -19,6 +19,9 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 
 [Having problems with installation? Check here.](https://github.com/mparkms/nodecg-for-smash/wiki/Troubleshooting-installation) If that doesn't help, post an issue here or tweet at me @kaabistar
 
+## Use with OBS Multiplatform
+The installation instructions for OBS multiplatform are exactly the same as above with the exception that you will have to use [Browser Plugin](https://obsproject.com/forum/resources/browser-plugin.115/) instead of CLR Browser. Also you will have to create your own scene, and manually set the required urls for browser import elements. The required elements can be found by searching the html directory under nodecg/bundles/nodecg-for-smash
+
 
 ## Overview of included dashboard panels
 
