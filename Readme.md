@@ -20,15 +20,15 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 [Having problems with installation? Check here.](https://github.com/mparkms/nodecg-for-smash/wiki/Troubleshooting-installation) If that doesn't help, post an issue here or tweet at me @kaabistar
 
 ## Use with OBS Multiplatform
-The installation instructions for OBS multiplatform are exactly the same as above with the exception that you will have to use [Browser Plugin](https://obsproject.com/forum/resources/browser-plugin.115/) instead of CLR Browser. Also you will have to create your own scene, and manually set the required urls for browser import elements. The required elements can be found by searching the html directory under nodecg/bundles/nodecg-for-smash.
+The installation instructions for OBS multiplatform are exactly the same as above with the exception that you will have to use [Browser Plugin](https://obsproject.com/forum/resources/browser-plugin.115/) instead of CLR Browser. Also you will have to create your own scene, and manually set the required URLs for browser import elements. The URLs can be found by going into the graphics page in the dashboard using the top-left menu.
 
 Scene transitions will NOT work with OBS MP as it is not currently supported by OBS Remote.
 
 Also, elements can sometimes display scroll bars in OBS MP when rendered. To fix this behaviour enter the following in the CSS box for each element you setup in OBS MP:
 
-body {
-    overflow: hidden;
-}
+    body {
+        overflow: hidden;
+    }
 
 ## Overview of included dashboard panels
 
