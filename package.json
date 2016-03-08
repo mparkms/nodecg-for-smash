@@ -5,6 +5,9 @@
 	"hompeage": "https://github.com/mparkms/nodecg-for-smash",
 	"license": "MIT",
 	"author": "Mike Park <mikeparkms@gmail.com> (www.mikeparkms.com)",
+	"dependencies": {
+		"obs-remote": "^1.0.1"
+	},
 	"nodecg": {
 		"compatibleRange": "~0.7.0",
 		"dashboardPanels": [
