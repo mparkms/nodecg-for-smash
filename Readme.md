@@ -12,8 +12,12 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 6. Start NodeCG by entering `nodecg start` into command prompt in the folder where NodeCG is installed and go to `localhost:9090` in your browser.
 7. Install [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) if you haven't done so already.
 8. In OBS, click Scene Collections > New then Scene Collection > Import then select the scene collection `/obs/scene.xconfig` to import into OBS or use the links in the Graphics page on the dashboard to make your own scene layout. If you're using OBS Studio, you'll need to do it manually since it lacks the ability to import scenes.
-9. If you want to use the Scene Transition panel, install OBS Remote and turn off the password for it.
-10. If you want to use the Bracket panel's Challonge integration, put in your Challonge API key into `extension/node-challonge-ext.js` where it says `ENTER API KEY HERE`.
+9. If you want to use the Scene Transition panel, install OBS Remote and turn off the password.
+10. If you want to use the Bracket panel's Challonge integration, create the file `cfg/nodecg-for-smash.json` with contents:
+
+    {
+        "challongeKey": "API KEY
+    }
 
 [Installation instruction video - if you're confused about any of the above I suggest watching this.](https://youtu.be/MweCH70GGY4)
 
@@ -34,7 +38,7 @@ Also, elements can sometimes display scroll bars in OBS MP when rendered. To fix
 
 ### Players & Score
 
-Player tag, scores, characters, and countries. Can toggle between 2 player and 4 player mode for doubles. After toggling just hit update again to change the layout. Can also swap players.
+Player tag, scores, characters, and countries. Can toggle between 2 player and 4 player mode for doubles. After toggling just hit update again to change the layout. Can also swap players. Supports sponsor icons. Upload in the dashboard in the upload page, then click "Manage Sponsor Icons" in the players panel to assign proper names to each icon. In 2 player mode, it automatically prepends the sponsor's name to the player's tag.
 
 Associated graphic: players.html
 
