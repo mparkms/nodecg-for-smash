@@ -16,7 +16,10 @@
 		});
 		
 		teamNamesReplicant.on('change', function(oldValue, newValue){
-			document.querySelector('player-info').setTeams(newValue);
+			document.querySelector('#player1').setTeams(newValue);
+			document.querySelector('#player2').setTeams(newValue);
+			document.querySelector('#player3').setTeams(newValue);
+			document.querySelector('#player4').setTeams(newValue);
 		});
 
 		$update.click(function() {
@@ -40,10 +43,12 @@
 					'p1Score': document.querySelector('#player1').getScore(),
 					'p1Char': getCharacter(document.querySelector('#player1').getCharacter()),
 					'p1Flag': getCountryCode(document.querySelector('#player1').getFlag()),
+					'p1Sponsor': document.querySelector('#player1').getSponsor(),
 					'p2Tag': document.querySelector('#player2').getTag(),
 					'p2Score': document.querySelector('#player2').getScore(),
 					'p2Char': getCharacter(document.querySelector('#player2').getCharacter()),
-					'p2Flag': getCountryCode(document.querySelector('#player2').getFlag())
+					'p2Flag': getCountryCode(document.querySelector('#player2').getFlag()),
+					'p2Sponsor': document.querySelector('#player2').getSponsor()
 				};
 			} else {
 				return {
@@ -54,15 +59,19 @@
 					'p1Tag': document.querySelector('#player1').getTag(),
 					'p1Team': document.querySelector('#team-dropdown1').getSelected(),
 					'p1Flag': getCountryCode(document.querySelector('#player1').getFlag()),
+					'p1Sponsor': document.querySelector('#player1').getSponsor(),
 					'p2Tag': document.querySelector('#player2').getTag(),
 					'p2Team': document.querySelector('#team-dropdown2').getSelected(),
 					'p2Flag': getCountryCode(document.querySelector('#player2').getFlag()),
+					'p2Sponsor': document.querySelector('#player2').getSponsor(),
 					'p3Tag': document.querySelector('#player3').getTag(),
 					'p3Team': document.querySelector('#team-dropdown3').getSelected(),
 					'p3Flag': getCountryCode(document.querySelector('#player3').getFlag()),
+					'p3Sponsor': document.querySelector('#player3').getSponsor(),
 					'p4Tag': document.querySelector('#player4').getTag(),
 					'p4Team': document.querySelector('#team-dropdown4').getSelected(),
-					'p4Flag': getCountryCode(document.querySelector('#player4').getFlag())
+					'p4Flag': getCountryCode(document.querySelector('#player4').getFlag()),
+					'p4Sponsor': document.querySelector('#player4').getSponsor()
 				};
 			}
 		}
@@ -85,18 +94,21 @@
 					'tag': swap1.getTag(),
 					'score': swap1.getScore(),
 					'char': swap1.getCharacter(),
-					'flag': swap1.getFlag()
+					'flag': swap1.getFlag(),
+					'sponsor': swap1.getSponsor()
 				};
 
 				swap1.setTag(swap2.getTag());
 				swap1.setScore(swap2.getScore());
 				swap1.setCharacter(swap2.getCharacter());
 				swap1.setFlag(swap2.getFlag());
+				swap1.setSponsor(swap2.getSponsor());
 
 				swap2.setTag(tmp.tag);
 				swap2.setScore(tmp.score);
 				swap2.setCharacter(tmp.char);
 				swap2.setFlag(tmp.flag);
+				swap2.setSponsor(tmp.sponsor);
 			} else {
 				var swap1number = document.querySelector('#swap1').getSelected();
 				var swap2number = document.querySelector('#swap2').getSelected()
@@ -105,16 +117,19 @@
 				var tmp = {
 					'tag': swap1.getTag(),
 					'team': document.querySelector('#team-dropdown' + swap1number).getSelected(),
-					'flag': swap1.getFlag()
+					'flag': swap1.getFlag(),
+					'sponsor': swap1.getSponsor()
 				};
 
 				swap1.setTag(swap2.getTag());
 				document.querySelector('#team-dropdown' + swap1number).setSelected(document.querySelector('#team-dropdown' + swap2number).getSelected());
 				swap1.setFlag(swap2.getFlag());
+				swap1.setSponsor(swap2.getSponsor());
 
 				swap2.setTag(tmp.tag);
 				document.querySelector('#team-dropdown' + swap2number).setSelected(tmp.team)
 				swap2.setFlag(tmp.flag);
+				swap2.setSponsor(tmp.sponsor);
 			}		
 
 			return updateData();

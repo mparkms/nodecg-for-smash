@@ -85,6 +85,7 @@
 	display: flex;
 	align-items: center;
 	position: relative;
+	overflow: hidden;
 
 	font-family: 'Oxygen', helvetica, arial;
 	font-size: 20px;
@@ -113,6 +114,7 @@
 	margin-right: 6px;
 	float: left;
 	position: relative;
+	overflow: hidden;
 
 	display: flex;
 	align-items: center;
@@ -136,17 +138,24 @@
 
 .flag-2player {
 	padding-right: 5px;
+	flex: 0 0 27px;
+}
+
+.flag-4player {
+	flex: 0 0 32px;
 }
 
 .head {
 	padding-right: 4px;
 	margin: 5px;
+	flex: 0 0 20px;
 }
 
 .tag-2 {
 	margin-left: 5px;
 	margin-right: 5px;
 	flex-basis: 520px;
+	z-index: 2;
 }
 
 .score {
@@ -172,4 +181,30 @@
 .tag-4 {
 	margin-left: 5px;
 	margin-right: 5px;
+	z-index: 2;
+}
+
+.sponsor {
+	position: absolute;
+	flex-grow: 0;
+	opacity: 0.5;
+	z-index: 1;
+}
+
+#p1sponsor-2 {
+	left: 85%;
+	top: -10px;
+	transform: translateX(-50%);
+}
+
+#p2sponsor-2 {
+	left: 15%;
+	top: -10px;
+	transform: translateX(-50%);
+}
+
+.sponsor4 {
+	left: 75%;
+	top: -10px;
+	transform: translateX(-50%);
 }

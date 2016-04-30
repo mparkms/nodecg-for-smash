@@ -4,11 +4,17 @@ $(function () {
 	var twoPlayer = nodecg.Replicant('twoPlayer');
 	var twoPlayerValue;
 	var oldTwoPlayerValue = true;
+	var teamNamesReplicant = nodecg.Replicant('teamNames', {defaultValue: []});
+	var teamNames;
 	nodecg.listenFor('ssbmPlayerUpdate', update);
 
 	twoPlayer.on('change', function(oldValue, newValue) {
 		oldTwoPlayerValue = oldValue;
 		twoPlayerValue = newValue;
+	});
+	
+	teamNamesReplicant.on('change', function(oldValue, newValue) {
+		teamNames = newValue;
 	});
 
 	function update(data) {
@@ -26,6 +32,12 @@ $(function () {
 	function updatePlayers(data, toggle) {
 		var p1new = false;
 		var p2new = false;
+		if(data.p1Sponsor && data.p1Sponsor != "none") {
+			data.p1Tag = data.p1Sponsor + " | " + data.p1Tag;
+		}
+		if(data.p2Sponsor && data.p2Sponsor != "none") {
+			data.p2Tag = data.p2Sponsor + " | " + data.p2Tag;
+		}
 		if($('#p1tag-2').text() !== data.p1Tag || toggle) {
 			$('#player1-2').animate({left: "-100%"}, 1000);
 			p1new = true;
@@ -62,7 +74,35 @@ $(function () {
 		}
 		if(data.p2Flag) {
 			$('#p2flag-2').attr('class', 'flag flag-2player flag-' + data.p2Flag.toLowerCase());
-		}	
+		}
+		if(data.p1Sponsor) {
+			if (data.p1Sponsor == "none") {
+				$('#p1sponsor-2').attr('src', "");
+				$('#p1sponsor-2').hide();
+			} else { 
+				teamNames.forEach(function(e) {
+					if (e.name == data.p1Sponsor) {
+						$('#p1sponsor-2').show();
+						$('#p1sponsor-2').attr('src', e.url);
+						return;
+					}
+				});
+			}
+		}
+		if(data.p2Sponsor) {
+			if (data.p2Sponsor == "none") {
+				$('#p2sponsor-2').attr('src', "");
+				$('#p2sponsor-2').hide();			
+			} else { 
+				teamNames.forEach(function(e) {
+					if (e.name == data.p2Sponsor) {
+						$('#p2sponsor-2').show();
+						$('#p2sponsor-2').attr('src', e.url);
+						return;
+					}
+				});
+			}
+		}
 	}
 
 	function toggleTwoPlayer() {
@@ -137,6 +177,20 @@ $(function () {
 				if(data['p' + pNum + 'Flag']) {
 					$('#p' + pNum + 'flag-4').attr('class', 'flag flag-4player flag-' + data['p' + pNum + 'Flag'].toLowerCase());
 				}
+				if(data['p' + pNum + 'Sponsor']) {
+					if (data['p' + pNum + 'Sponsor'] == "none") {
+						$('#p' + pNum + 'sponsor-4').attr('src', "");
+						$('#p' + pNum + 'sponsor-4').hide();
+					} else { 
+						teamNames.forEach(function(e) {
+							if (e.name == data['p' + pNum + 'Sponsor']) {
+								$('#p' + pNum + 'sponsor-4').show();
+								$('#p' + pNum + 'sponsor-4').attr('src', e.url);
+								return;
+							}
+						});
+					}
+				}
 				$('#p' + pNum + 'tag-4').text(data['p' + pNum + 'Tag']);
 			}});
 			$('#player' + pNum + '-4').animate({top: "0px"}, 1000);
@@ -148,6 +202,20 @@ $(function () {
 			// }
 			if(data['p' + pNum + 'Flag']) {
 				$('#p' + pNum + 'flag-4').attr('class', 'flag flag-4player flag-' + data['p' + pNum + 'Flag'].toLowerCase());
+			}
+			if(data['p' + pNum + 'Sponsor']) {
+				if (data['p' + pNum + 'Sponsor'] == "none") {
+					$('#p' + pNum + 'sponsor-4').attr('src', "");
+					$('#p' + pNum + 'sponsor-4').hide();		
+				} else { 
+					teamNames.forEach(function(e) {
+						if (e.name == data['p' + pNum + 'Sponsor']) {
+							$('#p' + pNum + 'sponsor-4').show();
+							$('#p' + pNum + 'sponsor-4').attr('src', e.url);
+							return;
+						}
+					});
+				}
 			}
 		}
 	}
