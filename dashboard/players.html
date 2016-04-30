@@ -377,10 +377,20 @@ paper-button.indigo {
 		<div class="flex" style="padding-right: 5px">
 			<div class="horizontal layout">
 				<div class="flex-2" style="padding-right:2px">
+					<paper-dropdown-menu id="ssbm-p{{player}}Team" label="Team">
+						<paper-menu class="dropdown-content" class="dropdown-content" attr-for-selected="value" selected="none">
+							<paper-item value="none"></paper-item>
+							<template is="dom-repeat" items="{{teams}}">
+								<paper-item value="{{item}}">{{item}}</paper-item>
+							</template>
+						</paper-menu>
+					</paper-dropdown-menu>
+				</div>
+				<div class="flex-4" style="padding-left:2px;padding-right:2px">
 					<paper-input id="ssbm-p{{player}}Tag" label="Player {{player}} Tag" value="{{tag}}"></paper-input>
 				</div>
 				<div class="flex" style="padding-left:2px">
-					<paper-input class="player-score" id="ssbm-p{{player}}Score" type="number" label="Player {{player}} Score" value="{{score}}"></paper-input>
+					<paper-input class="player-score" id="ssbm-p{{player}}Score" type="number" label="Score" value="{{score}}"></paper-input>
 				</div>
 			</div>
 			<team-dropdown player="1" id="team-dropdown{{player}}"></team-dropdown>
@@ -394,6 +404,7 @@ paper-button.indigo {
 			is: 'player-info',
 			ready: function() {
 				this.score = 0;
+				this.teams = [];
 			},
 			getTag: function() {
 				return this.tag;
@@ -418,6 +429,12 @@ paper-button.indigo {
 			},
 			setFlag: function(flag) {
 				this.flag = flag;
+			},
+			setTeams: function(teams) {
+				this.splice('teams', 0, this.teams.length);
+				for (var i=0; i < teams.length; i++) {
+					this.push('teams', teams[i].name);
+				}
 			}
 		});
 	});
@@ -454,6 +471,7 @@ paper-button.indigo {
 
 <div class="layout horizontal">
 	<paper-button raised class="flex" id="ssbm-players-toggle" style="width: 100%">Toggle 2/4 players</paper-button>
+	<paper-button raised class="flex" id="manage-team-icons" nodecg-dialog="manage-teams">Manage Team Icons</paper-button>
 </div>
 <div class="layout horizontal teams" style="display:none">
 	<teams-score number="1" id="team1"></teams-score>

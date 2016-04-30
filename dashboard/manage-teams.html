@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+	<script src="components/webcomponentsjs/webcomponents-lite.min.js"></script>
+	<script src="components/jquery/dist/jquery.min.js"></script>
+
+	<link rel="import" href="components/polymer/polymer.html">
+	<link rel="import" href="components/paper-input/paper-input.html">
+	<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
+	<link rel="import" href="components/paper-menu/paper-menu.html">
+	<link rel="import" href="components/paper-item/paper-item.html">
+	<link rel="import" href="components/paper-item/paper-icon-item.html">
+	<link rel="import" href="components/paper-listbox/paper-listbox.html">
+	<link rel="import" href="components/paper-button/paper-button.html">
+	<link rel="import" href="components/iron-flex-layout/classes/iron-flex-layout.html">
+</head>
+
+<body>
+<dom-module name="teams-list">
+	<template>
+		<div role="listbox" class="flex" style="width:100%">
+			<template is="dom-repeat" items="{{teams}}">
+				<paper-icon-item style="width:100%">
+					<img src="{{item.url}}" width="50" item-icon>
+					<paper-input id="team{{index}}name" value="{{item.name}}"></paper-input>
+				</paper-icon-item>
+			</template>
+		</div>
+	</template>
+	<script>
+	window.addEventListener('WebComponentsReady', function(e) {
+		Polymer({
+			is: 'teams-list',
+			ready: function() {
+				this.teams = [];
+			},
+			setList: function(teamsList) {
+				this.teams = teamsList;
+			},
+			getList: function() {
+				return this.teams;
+			},
+			addTeam: function(team) {
+				this.push('teams', team);
+			},
+			removeTeam: function(index) {
+				this.splice('teams', index, 1);
+			},
+			updateTeam: function(index, url, name) {
+				this.set('teams.' + index + '.url', url);
+				this.set('teams.' + index + '.name', name);
+			}
+		});
+	});	
+	</script>
+</dom-module>
+
+<div class="horizontal layout">
+	<teams-list></teams-list>
+</div>
+
+<script src="js/manage-teams.js"></script>
+</body>

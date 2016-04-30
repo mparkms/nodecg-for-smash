@@ -62,6 +62,23 @@
 					}
 				],
 				"file": "manual-update.html"
+			},
+			{
+				"name": "manage-teams",
+				"title": "Manage Team Icons",
+				"width": 3,
+				"dialog": true,
+				"dialogButtons": [
+					{
+						"name": "update",
+						"type": "confirm"
+					},
+					{
+						"name": "done",
+						"type": "dismiss"
+					}
+				],
+				"file": "manage-teams.html"
 			}
 		],
 		"graphics": [
@@ -100,6 +117,9 @@
 				"width": 1290,
 				"height": 60
 			}
-		]
+		],
+		"uploads": {
+			"enabled": true
+		}
 	}
 }

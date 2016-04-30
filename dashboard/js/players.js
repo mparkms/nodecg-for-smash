@@ -6,13 +6,18 @@
 		var $togglePlayers = $('#ssbm-players-toggle');
 		var twoPlayer = nodecg.Replicant('twoPlayer', {defaultValue: true});
 		var twoPlayerValue;
+		var teamNamesReplicant = nodecg.Replicant('teamNames', {defaultValue: []});
 		// var countrycodes = JSON.parse(data);
 		// console.log(countryCodes);
 
 		twoPlayer.on('change', function(oldValue, newValue) {
 			twoPlayerValue = newValue;
 			toggleTwoFour();
-		})
+		});
+		
+		teamNamesReplicant.on('change', function(oldValue, newValue){
+			document.querySelector('player-info').setTeams(newValue);
+		});
 
 		$update.click(function() {
 			console.log(updateData());
