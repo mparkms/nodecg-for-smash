@@ -75,11 +75,11 @@
 }
 
 .twoplayer {
-	/*background: #11a105;*/
+	background: #012c58;
 	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
-	background-image: url('../img/backgrounds/players.png');
-	width: 550px;
+	/*background-image: url('../img/backgrounds/players.png');*/
+	width: 446px;
 	height: 45px;
 	float: left;
 	display: flex;
@@ -125,11 +125,11 @@
 
 #player1-2 {
 	margin-left: 5px;
-	margin-right: 90px;
+	margin-right: 194px;
 }
 
 #player2-2 {
-	margin-left: 90px;
+	margin-left: 194px;
 }
 
 .flag {
@@ -160,8 +160,12 @@
 
 .score {
 	width: 20px;
-	margin: 5px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 5px 0 5px;
 	text-align: center;
+	background: #3aa6d8;
+	z-index: 2;
 }
 
 #p2tag-2 {
@@ -207,4 +211,14 @@
 	left: 75%;
 	top: -10px;
 	transform: translateX(-50%);
+}
+
+.glow {
+	/*background-image: url('../img/backgrounds/red glow.png');*/
+	position: absolute;
+	width: 443px;
+	height: 45px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
 }

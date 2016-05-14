@@ -3,13 +3,11 @@
 $(function () {
 	var twoPlayer = nodecg.Replicant('twoPlayer');
 	var twoPlayerValue;
-	var oldTwoPlayerValue = true;
 	var teamNamesReplicant = nodecg.Replicant('teamNames', {defaultValue: []});
 	var teamNames;
 	nodecg.listenFor('ssbmPlayerUpdate', update);
 
 	twoPlayer.on('change', function(oldValue, newValue) {
-		oldTwoPlayerValue = oldValue;
 		twoPlayerValue = newValue;
 	});
 	
@@ -18,18 +16,10 @@ $(function () {
 	});
 
 	function update(data) {
-		console.log(data);
-		var toggle = false;
-		if (twoPlayerValue != oldTwoPlayerValue) { 
-			toggleTwoPlayer(); 
-			var toggle = true;
-			oldTwoPlayerValue = twoPlayerValue;
-		};
-		if (twoPlayerValue) { updatePlayers(data, toggle); }
-		else { updateFourPlayers(data, toggle); }
+		updatePlayers(data, twoPlayerValue);
 	}
 
-	function updatePlayers(data, toggle) {
+	function updatePlayers(data, twoPlayer) {
 		var p1new = false;
 		var p2new = false;
 		if(data.p1Sponsor && data.p1Sponsor != "none") {
@@ -38,18 +28,18 @@ $(function () {
 		if(data.p2Sponsor && data.p2Sponsor != "none") {
 			data.p2Tag = data.p2Sponsor + " | " + data.p2Tag;
 		}
-		if($('#p1tag-2').text() !== data.p1Tag || toggle) {
+		if($('#p1tag-2').text() !== data.p1Tag) {
 			$('#player1-2').animate({left: "-100%"}, 1000);
 			p1new = true;
 		}
-		if($('#p2tag-2').text() !== data.p2Tag || toggle) {
+		if($('#p2tag-2').text() !== data.p2Tag) {
 			$('#player2-2').animate({left: "100%"}, 1000);
 			p2new = true;
 		}
 
 		if (p1new || p2new)
-			setTimeout(function() { setText(data); }, 1000);
-		else setText(data);
+			setTimeout(function() { setText(data, twoPlayer); }, 1000);
+		else setText(data, twoPlayer);
 		
 		if(p1new)
 			$('#player1-2').animate({left: "0%"}, 1000);
@@ -57,17 +47,21 @@ $(function () {
 			$('#player2-2').animate({left: "0%"}, 1000);
 	}
 
-	function setText(data) {
+	function setText(data, twoPlayer) {
 		$('#p1tag-2').text(data.p1Tag);
 		$('#p1score-2').text(data.p1Score);
 		$('#p2tag-2').text(data.p2Tag);
 		$('#p2score-2').text(data.p2Score);
 
-		if(data.p1Char) {
+		if(data.p1Char && twoPlayer) {
 			$('#p1char-2').attr('class', 'head head-' + data.p1Char);
+		} else {
+			$('#p1char-2').attr('class', 'head head-none');
 		}
-		if(data.p2Char) {
+		if(data.p2Char && twoPlayer) {
 			$('#p2char-2').attr('class', 'head head-' + data.p2Char);
+		} else {
+			$('#p2char-2').attr('class', 'head head-none');
 		}
 		if(data.p1Flag) {
 			$('#p1flag-2').attr('class', 'flag flag-2player flag-' + data.p1Flag.toLowerCase());
@@ -102,6 +96,13 @@ $(function () {
 					}
 				});
 			}
+		}
+		if (twoPlayer) {
+			$('#p1glow').css("background-image", "none");
+			$('#p2glow').css("background-image", "none");
+		} else {
+			$('#p1glow').css("background-image", "url('/graphics/nodecg-for-smash/img/backgrounds/" + data.p1Team + " glow.png')");
+			$('#p2glow').css("background-image", "url('/graphics/nodecg-for-smash/img/backgrounds/" + data.p2Team + " glow.png')");
 		}
 	}
 
