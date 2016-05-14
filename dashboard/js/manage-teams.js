@@ -22,7 +22,7 @@
 			if (teamNames && uploads) {
 				// if the diff. between the two lengths > 1, uploads hasn't been initialized properly yet
 				// i.e. after restarting server
-				if (Math.abs(teamNames.length - uploads.length)) return;
+				if (Math.abs(teamNames.length - uploads.length) > 1) return;
 				if (teamNames.length < uploads.length) {
 					for (var i=teamNames.length; i < uploads.length; i++) {
 						$list.addTeam({url: uploads[i].url, name: uploads[i].name});
