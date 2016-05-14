@@ -26,25 +26,11 @@
 				"file": "bracket.html"
 			},
 			{
-				"name": "ssbm-crew-roster",
-				"title": "Crew Battle Rosters",
-				"width": 4,
-				"headerColor": "#2d4e8a",
-				"file": "crew-roster.html"
-			},
-			{
 				"name": "ssbm-misc-text",
-				"title": "Top Info, Playercam, Lower Third",
-				"width": 4,
-				"headerColor": "#2d4e8a",
-				"file": "misc-text.html"
-			},
-			{
-				"name": "ssbm-scene-change",
-				"title": "Scene Transitions",
+				"title": "Misc Text",
 				"width": 2,
 				"headerColor": "#2d4e8a",
-				"file": "scene-change.html"
+				"file": "misc-text.html"
 			},
 			{
 				"name": "manual-update",
