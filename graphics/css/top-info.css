@@ -17,7 +17,7 @@ body {
 	/*background: #11a105;*/
 	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
-	background-image: url('../img/backgrounds/top info.png');
+	/*background-image: url('../img/backgrounds/top info.png');*/
 	width: 430px;
 	height: 45px;
 	position: absolute;
@@ -41,9 +41,9 @@ body {
 #message {
 	width: 0;
 	height: 45px;
-	/*background: #007fdc;*/
-	background-image: url('../img/backgrounds/top message.png');
-	border-radius: 5px;
+	background: #0054a6;
+	/*background-image: url('../img/backgrounds/top message.png');*/
+	/*border-radius: 5px;*/
 	position: absolute;
 	left: 645px;
 

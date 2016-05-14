@@ -79,7 +79,7 @@
 	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
 	/*background-image: url('../img/backgrounds/players.png');*/
-	width: 446px;
+	width: 447px;
 	height: 45px;
 	float: left;
 	display: flex;
@@ -125,11 +125,11 @@
 
 #player1-2 {
 	margin-left: 5px;
-	margin-right: 194px;
+	margin-right: 166px;
 }
 
 #player2-2 {
-	margin-left: 194px;
+	margin-left: 166px;
 }
 
 .flag {
