@@ -2,6 +2,8 @@
 
 Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee streams. Compatible with OBS. Xsplit may work, but I haven't tested it. This is browser-based, so it'll work on any OS. Recommended that you use the dashboard in Chrome because web-components takes a long time to load in other browsers.
 
+## Not compatible with NodeCG v0.8.0/Node.js v6. Update coming soon.
+
 ## How to use
 
 1. Install [git](https://git-scm.com/). Make sure to select 'Use Git from the Windows Command Prompt' if you're on Windows.
