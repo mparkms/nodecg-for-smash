@@ -7,11 +7,11 @@
 		var roundMatchReplicant = nodecg.Replicant('roundMatch', {persistent: false});
 		var roundMatch;
 
-		bracketReplicant.on('change', function(oldValue, newValue) {
+		bracketReplicant.on('change', function(newValue, oldValue) {
 			bracket = newValue;
 		});
 
-		roundMatchReplicant.on('change', function(oldValue, newValue) {
+		roundMatchReplicant.on('change', function(newValue, oldValue) {
 			roundMatch = newValue;
 			updateFields();
 		})

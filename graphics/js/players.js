@@ -8,12 +8,13 @@ $(function () {
 	var teamNames;
 	nodecg.listenFor('ssbmPlayerUpdate', update);
 
-	twoPlayer.on('change', function(oldValue, newValue) {
+	twoPlayer.on('change', function(newValue, oldValue) {
+		if (newValue == oldValue) return;
 		oldTwoPlayerValue = oldValue;
 		twoPlayerValue = newValue;
 	});
 	
-	teamNamesReplicant.on('change', function(oldValue, newValue) {
+	teamNamesReplicant.on('change', function(newValue, oldValue) {
 		teamNames = newValue;
 	});
 
@@ -278,7 +279,7 @@ $(function () {
 
 	var bgInfo = nodecg.Replicant('bgInfo', 'ssbm-bg-helper');
 
-	bgInfo.on('change', function(oldValue, newValue) {
+	bgInfo.on('change', function(newValue, oldValue) {
 		if(oldValue) {
 			if(oldValue.image && newValue.image) return;
 			else if (newValue.image) {

@@ -3,16 +3,16 @@
 	window.addEventListener('WebComponentsReady', function(e) {
 		var teamNamesReplicant = nodecg.Replicant("teamNames", {defaultvalue: []});
 		var teamNames;
-		var uploadsReplicant = nodecg.Replicant("uploads");
+		var teamLogosReplicant = nodecg.Replicant("assets:teamlogos");
 		var uploads;
 		
-		teamNamesReplicant.on('change', function (oldvalue, newValue) {
+		teamNamesReplicant.on('change', function (newValue, oldValue) {
 			teamNames = newValue;
 			document.querySelector('teams-list').setList(teamNames);
 			updateTeamNames();
 		});
 		
-		uploadsReplicant.on('change', function(oldValue, newValue) {
+		teamLogosReplicant.on('change', function(newValue, oldValue) {
 			uploads = newValue;
 			updateTeamNames();
 		});

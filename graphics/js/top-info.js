@@ -35,7 +35,7 @@ $(function () {
 
 	var bgInfo = nodecg.Replicant('bgInfo', 'ssbm-bg-helper');
 
-	bgInfo.on('change', function(oldValue, newValue) {
+	bgInfo.on('change', function(newValue, oldValue) {
 		if(oldValue) {
 			if(oldValue.image && newValue.image) return;
 			else if (newValue.image) {
