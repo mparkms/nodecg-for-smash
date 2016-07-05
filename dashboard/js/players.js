@@ -2,11 +2,40 @@
 	'use strict';
 	window.addEventListener('WebComponentsReady', function(e) {
 		var $update = $('#ssbm-players-update');
+		var $fields = $('#ssbm-fields-update');
 		var $swap = $('#ssbm-players-swap');
 		var $togglePlayers = $('#ssbm-players-toggle');
 		var twoPlayer = nodecg.Replicant('twoPlayer', {defaultValue: true});
 		var twoPlayerValue;
 		var teamNamesReplicant = nodecg.Replicant('teamNames', {defaultValue: []});
+		var playerList = nodecg.Replicant('playerList', {defaultValue: []}); //persistent name list
+
+		/*var playerInputs = document.getElementsByClassName('player-tags');
+		for ( var i = 0; i < playerInputs.length; i++ ) {
+			$(playerInputs[i]).change(tagInputChanged(i+1));
+		}*/
+
+		function tagUpdateFields( num ) {
+			var inputTag = $.trim(document.querySelector('#player' + num).getTag());
+			try {
+				var result = $.grep(playerList.value, function (e) {
+					return e.tag == inputTag;
+				});
+			}
+			catch(e)
+			{
+				return;
+			}
+			if ( result.length == 0 ) {
+				return;
+			}
+			else if ( result.length >= 1 ) { //fill fields with stored data
+				document.querySelector("#player" + num).setCharacter( result[0].char );
+				document.querySelector("#player" + num).setFlag( result[0].flag );
+				document.querySelector("#player" + num).setSponsor( result[0].sponsor );
+			}
+		}
+
 		// var countrycodes = JSON.parse(data);
 		// console.log(countryCodes);
 
@@ -14,7 +43,7 @@
 			twoPlayerValue = newValue;
 			toggleTwoFour();
 		});
-		
+
 		teamNamesReplicant.on('change', function(newValue, oldValue){
 			document.querySelector('#player1').setTeams(newValue);
 			document.querySelector('#player2').setTeams(newValue);
@@ -23,7 +52,7 @@
 		});
 
 		$update.click(function() {
-			console.log(updateData());
+			//console.log(updateData());
 			nodecg.sendMessage('ssbmPlayerUpdate', updateData());
 		});
 
@@ -36,7 +65,43 @@
 			twoPlayer.value = !twoPlayerValue;
 		});
 
+		$fields.click( function() {
+			for ( var i = 0; i < 4; i++ ) {
+				tagUpdateFields(i + 1);
+			}
+		});
+
+		function pushIfNotExist (val) {
+			if (typeof(val) == 'undefined' || val == '' || val.tag == "") {
+				return;
+			}
+			var result = $.grep(playerList.value, function(e){ return e.tag == val.tag; });
+			if ( result.length == 0 ) {
+				playerList.value.push(val);
+				console.log(playerList.value);
+			}
+			else if ( result.length >= 1 ) {
+				var index = playerList.value.indexOf(result[0]);
+				playerList.value[index] = val;
+				console.log(playerList.value);
+			}
+		};
+
+		function updatePlayerList() {
+			$('#players').empty();
+			var arrayLength = playerList.value.length;
+			for (var i = 0; i < arrayLength; i++) {
+				$('#players').append('<option>' + playerList.value[i].tag + '</option>');
+			}
+		}
+
 		function updateData() {
+			pushIfNotExist(getPlayerData(1));
+			pushIfNotExist(getPlayerData(2));
+			pushIfNotExist(getPlayerData(3));
+			pushIfNotExist(getPlayerData(4));
+			playerList.value.sort();
+			updatePlayerList();
 			if (twoPlayerValue) {
 				return {
 					'p1Tag': document.querySelector('#player1').getTag(),
@@ -130,7 +195,7 @@
 				document.querySelector('#team-dropdown' + swap2number).setSelected(tmp.team)
 				swap2.setFlag(tmp.flag);
 				swap2.setSponsor(tmp.sponsor);
-			}		
+			}
 
 			return updateData();
 		}
@@ -154,6 +219,15 @@
 				// $('#ssbm-players-swap').show();
 				$('.player-score').attr('disabled', false);
 				twoPlayer.value = true;
+			}
+		}
+
+		function getPlayerData(num) {
+			return {
+				tag: $.trim(document.querySelector('#player' + num).getTag()),
+				char: document.querySelector('#player' + num).getCharacter(),
+				flag: document.querySelector('#player' + num).getFlag(),
+				sponsor: document.querySelector('#player' + num).getSponsor()
 			}
 		}
 	});
