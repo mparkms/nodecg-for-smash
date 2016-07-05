@@ -301,6 +301,8 @@
 <option value="Zimbabwe">
 </datalist>
 
+<datalist id="players"></datalist>
+
 <style>
 paper-button.indigo {
     background-color: #2D4E8A;
@@ -387,7 +389,7 @@ paper-button.indigo {
 					</paper-dropdown-menu>
 				</div>
 				<div class="flex-4" style="padding-left:2px;padding-right:2px">
-					<paper-input id="ssbm-p{{player}}Tag" label="Player {{player}} Tag" value="{{tag}}"></paper-input>
+					<paper-input class="player-tags" id="ssbm-p{{player}}Tag" label="Player {{player}} Tag" list="players" autocomplete="on" value="{{tag}}"></paper-input>
 				</div>
 				<div class="flex" style="padding-left:2px">
 					<paper-input class="player-score" id="ssbm-p{{player}}Score" type="number" label="Score" value="{{score}}"></paper-input>
@@ -495,6 +497,7 @@ paper-button.indigo {
 </div>
 <hr>
 <div class="layout horizontal">
+	<paper-button raised class="indigo flex" id="ssbm-fields-update" style="width: 100%">Complete Fields</paper-button>
 	<paper-button raised class="indigo flex" id="ssbm-players-update" style="width: 100%">Update</paper-button>
 </div>
 <div class="layout horizontal" id="swap-dropdowns">
