@@ -1,6 +1,6 @@
 {
 	"name": "nodecg-for-smash",
-	"version": "0.2.3",
+	"version": "0.3.0",
 	"description": "NodeCG bundle for SSBM streams",
 	"hompeage": "https://github.com/mparkms/nodecg-for-smash",
 	"license": "MIT",
@@ -9,7 +9,7 @@
 		"obs-remote": "^1.0.1"
 	},
 	"nodecg": {
-		"compatibleRange": "~0.7.0",
+		"compatibleRange": "~0.8.0",
 		"dashboardPanels": [
 			{
 				"name": "ssbm-players",
@@ -94,18 +94,22 @@
 				"height": 250
 			},
 			{
-				"file": "scene-change.html",
-				"width": 1920,
-				"height": 1080
-			},
-			{
 				"file": "top-info.html",
 				"width": 1290,
 				"height": 60
 			}
 		],
-		"uploads": {
-			"enabled": true
-		}
+		"assetCategories": [
+			{
+				"name": "teamlogos",
+				"title": "Team Logos",
+				"allowedTypes": [
+					"jpg",
+					"jpeg",
+					"gif",
+					"png"
+				]
+			}
+		]
 	}
 }

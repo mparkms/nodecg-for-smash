@@ -10,12 +10,12 @@
 		// var countrycodes = JSON.parse(data);
 		// console.log(countryCodes);
 
-		twoPlayer.on('change', function(oldValue, newValue) {
+		twoPlayer.on('change', function(newValue, oldValue) {
 			twoPlayerValue = newValue;
 			toggleTwoFour();
 		});
 		
-		teamNamesReplicant.on('change', function(oldValue, newValue){
+		teamNamesReplicant.on('change', function(newValue, oldValue){
 			document.querySelector('#player1').setTeams(newValue);
 			document.querySelector('#player2').setTeams(newValue);
 			// document.querySelector('#player3').setTeams(newValue);

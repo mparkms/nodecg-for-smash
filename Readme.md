@@ -1,6 +1,6 @@
 # NodeCG for Smash
 
-Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee streams. Compatible with OBS. Xsplit may work, but I haven't tested it. This is browser-based, so it'll work on any OS. Recommended that you use the dashboard in Chrome because web-components takes a long time to load in other browsers.
+Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee streams. **Compatible only with OBS Studio with [Browser Source plugin v1.21](https://github.com/kc5nra/obs-browser/releases/tag/1.21).** Recommended that you use the dashboard in Chrome because web-components takes a long time to load in other browsers.
 
 ## Not compatible with NodeCG v0.8.0/Node.js v6. Update coming soon.
 
@@ -12,9 +12,7 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 4. Install nodecg-cli as shown [here.](https://github.com/nodecg/nodecg-cli)
 5. In the command line in the folder you installed NodeCG, enter `nodecg install mparkms/nodecg-for-smash`
 6. Start NodeCG by entering `nodecg start` into command prompt in the folder where NodeCG is installed and go to `localhost:9090` in your browser.
-7. Install [CLR Browser](https://obsproject.com/forum/resources/clr-browser-source-plugin.22/) if you haven't done so already.
-8. In OBS, click Scene Collections > New then Scene Collection > Import then select the scene collection `/obs/scene.xconfig` to import into OBS or use the links in the Graphics page on the dashboard to make your own scene layout. If you're using OBS Studio, you'll need to do it manually since it lacks the ability to import scenes.
-9. If you want to use the Scene Transition panel, install OBS Remote and turn off the password.
+7. Install [Browser Source v1.21](https://github.com/kc5nra/obs-browser/releases/tag/1.21) if you haven't done so already.
 10. If you want to use the Bracket panel's Challonge integration, create the file `cfg/nodecg-for-smash.json` with contents:
 
     {
@@ -25,10 +23,8 @@ Bundles for use with [NodeCG](http://nodecg.com/) in Super Smash Bros. Melee str
 
 [Having problems with installation? Check here.](https://github.com/mparkms/nodecg-for-smash/wiki/Troubleshooting-installation) If that doesn't help, post an issue here or tweet at me @kaabistar
 
-## Use with OBS Multiplatform
-The installation instructions for OBS multiplatform are exactly the same as above with the exception that you will have to use [Browser Plugin](https://obsproject.com/forum/resources/browser-plugin.115/) instead of CLR Browser. Also you will have to create your own scene, and manually set the required URLs for browser import elements. The URLs can be found by going into the graphics page in the dashboard using the top-left menu.
-
-Scene transitions will NOT work with OBS MP as it is not currently supported by OBS Remote.
+## Use with OBS Studio
+The installation instructions for OBS Studio are exactly the same as above with the exception that you will have to use [Browser Plugin](https://github.com/kc5nra/obs-browser/releases/tag/1.21) instead of CLR Browser. Also you will have to create your own scene, and manually set the required URLs for browser import elements. The URLs can be found by going into the graphics page in the dashboard using the top-left menu.
 
 Also, elements can sometimes display scroll bars in OBS MP when rendered. To fix this behaviour enter the following in the CSS box for each element you setup in OBS MP:
 
@@ -55,12 +51,6 @@ Associated graphics: top-info.html, playercam.html, lower-third.html
 Top 8 bracket display to show on stream. Can pull the bracket from Challonge and/or the streamer can manually update the bracket. Make sure you've put in your Challonge API key into `extension/node-challonge-ext.js` if you want to use that feature.
 
 Associated graphics: bracket.html
-
-### Scene Transition
-
-Remotely change scenes from the NodeCG dashboard, with option to use a fancy transition animation. Requires OBS Remote to use. You can change the image to use in the transition animation in `/graphics/img/logo_slices`. The image must be split into slices 240px wide.
-
-Associated graphics: scene-change.html
 
 ### Crew Battle Rosters
 
@@ -91,4 +81,3 @@ Listing of what each file is:
 * [NodeCG](http://nodecg.com/)
 * [OBS Remote JS](https://github.com/nodecg/obs-remote-js)
 * [Node Challonge](https://github.com/Tidwell/node-challonge)
-* Transition animation taken from [toth-overlay](https://github.com/TipoftheHats/toth-overlay)

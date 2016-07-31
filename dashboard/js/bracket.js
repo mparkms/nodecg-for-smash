@@ -6,7 +6,7 @@
 		var bracketReplicant = nodecg.Replicant('bracket', {defaultValue: [], persistent: false});
 		var bracket = [];
 
-		bracketReplicant.on('change', function(oldValue, newValue) {
+		bracketReplicant.on('change', function(newValue, oldValue) {
 			bracket = newValue;
 		});
 
