@@ -3,6 +3,7 @@
 $(function () {
 	var twoPlayer = nodecg.Replicant('twoPlayer');
 	var twoPlayerValue;
+	var oldTwoPlayerValue = true;
 	var teamNamesReplicant = nodecg.Replicant('teamNames', {defaultValue: []});
 	var teamNames;
 	nodecg.listenFor('ssbmPlayerUpdate', update);
