@@ -33,6 +33,13 @@
 				"file": "misc-text.html"
 			},
 			{
+				"name": "ssbm-crew-roster",
+				"title": "Crew Battle Rosters",
+				"width": 4,
+				"headerColor": "#2d4e8a",
+				"file": "crew-roster.html"
+			},
+			{
 				"name": "manual-update",
 				"title": "Manual Update",
 				"width": 2,
