@@ -75,7 +75,7 @@
 }
 
 .twoplayer {
-	background: #012c58;
+	background: #390411;
 	/*background: -moz-linear-gradient(top, #e8e7e9 0%, #a4a5a6 100%); /* FF3.6+ */
 	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e7e9), color-stop(100%,#a4a5a6)); /* Chrome,Safari4+ */
 	/*background-image: url('../img/backgrounds/players.png');*/
@@ -164,7 +164,7 @@
 	line-height: 45px;
 	padding: 0 5px 0 5px;
 	text-align: center;
-	background: #3aa6d8;
+	background: #c00c37;
 	z-index: 2;
 }
 
